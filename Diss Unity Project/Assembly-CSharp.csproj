@@ -71,10 +71,6 @@
     <Compile Include="Assets\Placenote\Examples\ARKitPlaneSaver\PlacenoteARGeneratePlane.cs" />
     <Compile Include="Assets\Placenote\Examples\ARKitPlaneSaver\PlacenotePlaneMeshRender.cs" />
     <Compile Include="Assets\Placenote\Examples\ARKitPlaneSaver\PlacenotePlaneUtility.cs" />
-    <Compile Include="Assets\Placenote\Examples\RandomShapes\MapInfoElement.cs" />
-    <Compile Include="Assets\Placenote\Examples\RandomShapes\PlacenoteSampleView.cs" />
-    <Compile Include="Assets\Placenote\Examples\RandomShapes\RandomName.cs" />
-    <Compile Include="Assets\Placenote\Examples\RandomShapes\ShapeManager.cs" />
     <Compile Include="Assets\Placenote\Examples\SaveAndLoadAMap\SaveAndLoadAMap.cs" />
     <Compile Include="Assets\Placenote\Examples\SaveMetaData\ModelManager.cs" />
     <Compile Include="Assets\Placenote\Examples\SaveMetaData\SaveMetaData.cs" />
@@ -95,7 +91,11 @@
     <Compile Include="Assets\Placenote\Toolkits\SpatialCapture\PlaceMesh.cs" />
     <Compile Include="Assets\Placenote\Toolkits\SpatialCapture\PlacenoteWebAPI.cs" />
     <Compile Include="Assets\Scripts\CreateSaveMap.cs" />
+    <Compile Include="Assets\Scripts\MapInfoElement.cs" />
     <Compile Include="Assets\Scripts\ModelManager.cs" />
+    <Compile Include="Assets\Scripts\PlacenoteSampleView.cs" />
+    <Compile Include="Assets\Scripts\RandomName.cs" />
+    <Compile Include="Assets\Scripts\ShapeManager.cs" />
     <Compile Include="Assets\Scripts\SwitchScene.cs" />
     <Compile Include="Assets\UnityARKitPlugin\ARKitRemote\ARKitFaceTrackingRemoteConnection.cs" />
     <Compile Include="Assets\UnityARKitPlugin\ARKitRemote\ARKitRemoteConnection.cs" />
@@ -167,31 +167,31 @@
     <None Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\Shaders\YUVShader.shader" />
     <None Include="Assets\Placenote\Shaders\VertexColorPointCloud.shader" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>/Users/sophietraynor/Desktop/MSc Dissertation/MSc Dissertation/Diss Unity Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>/Users/sophietraynor/Desktop/MSc Dissertation/MSc Dissertation/MastersDissertation/Diss Unity Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>/Users/sophietraynor/Desktop/MSc Dissertation/MSc Dissertation/Diss Unity Project/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>/Users/sophietraynor/Desktop/MSc Dissertation/MSc Dissertation/MastersDissertation/Diss Unity Project/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>/Users/sophietraynor/Desktop/MSc Dissertation/MSc Dissertation/Diss Unity Project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>/Users/sophietraynor/Desktop/MSc Dissertation/MSc Dissertation/MastersDissertation/Diss Unity Project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>/Users/sophietraynor/Desktop/MSc Dissertation/MSc Dissertation/Diss Unity Project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>/Users/sophietraynor/Desktop/MSc Dissertation/MSc Dissertation/MastersDissertation/Diss Unity Project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>/Users/sophietraynor/Desktop/MSc Dissertation/MSc Dissertation/Diss Unity Project/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>/Users/sophietraynor/Desktop/MSc Dissertation/MSc Dissertation/MastersDissertation/Diss Unity Project/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>/Users/sophietraynor/Desktop/MSc Dissertation/MSc Dissertation/Diss Unity Project/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>/Users/sophietraynor/Desktop/MSc Dissertation/MSc Dissertation/MastersDissertation/Diss Unity Project/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>/Users/sophietraynor/Desktop/MSc Dissertation/MSc Dissertation/Diss Unity Project/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>/Users/sophietraynor/Desktop/MSc Dissertation/MSc Dissertation/MastersDissertation/Diss Unity Project/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>/Users/sophietraynor/Desktop/MSc Dissertation/MSc Dissertation/Diss Unity Project/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>/Users/sophietraynor/Desktop/MSc Dissertation/MSc Dissertation/MastersDissertation/Diss Unity Project/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>/Users/sophietraynor/Desktop/MSc Dissertation/MSc Dissertation/Diss Unity Project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>/Users/sophietraynor/Desktop/MSc Dissertation/MSc Dissertation/MastersDissertation/Diss Unity Project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>/Applications/Unity/Hub/Editor/2019.2.0f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -365,7 +365,7 @@
       <HintPath>/Applications/Unity/Hub/Editor/2019.2.0f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>/Users/sophietraynor/Desktop/MSc Dissertation/MSc Dissertation/Diss Unity Project/Assets/WanzyeeStudio/ThirdParty/SaladLab/Json.Net.Unity3D/Plugins/Newtonsoft.Json.dll</HintPath>
+      <HintPath>/Users/sophietraynor/Desktop/MSc Dissertation/MSc Dissertation/MastersDissertation/Diss Unity Project/Assets/WanzyeeStudio/ThirdParty/SaladLab/Json.Net.Unity3D/Plugins/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>/Applications/Unity/Hub/Editor/2019.2.0f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
