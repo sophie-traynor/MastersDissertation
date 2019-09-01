@@ -60,6 +60,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 64
       Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 89
@@ -899,7 +901,7 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
-      Hash: fb968a49db1b56171851b332e988221b
+      Hash: 90faf5b0909f5ccf2bec06457ca06ef7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ShapeManager

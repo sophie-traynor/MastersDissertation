@@ -963,6 +963,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c9f6fdeeb394a07b35cd0d68a21cba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShapePrefabs:
+  - {fileID: 5844110915397012081, guid: 83feebac67999426884643f9b3206e6e, type: 3}
   shapeInfoList: []
   shapeObjList: []
   mShapeMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}

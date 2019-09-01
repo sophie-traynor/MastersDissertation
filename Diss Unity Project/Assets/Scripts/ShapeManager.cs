@@ -35,6 +35,7 @@ public class ShapeList
 
 public class ShapeManager : MonoBehaviour {
 
+    public List<GameObject> ShapePrefabs = new List<GameObject>();
     public List<ShapeInfo> shapeInfoList = new List<ShapeInfo>();
     public List<GameObject> shapeObjList = new List<GameObject>();
     public Material mShapeMaterial;
@@ -140,10 +141,10 @@ public class ShapeManager : MonoBehaviour {
 
     public void AddShape(Vector3 shapePosition, Quaternion shapeRotation)
     {
-        System.Random rnd = new System.Random();
-        PrimitiveType type = (PrimitiveType)rnd.Next(0, 4);
-
-        int colorType =  rnd.Next(0, 3);
+        //System.Random rnd = new System.Random();
+        //PrimitiveType type = (PrimitiveType)rnd.Next(0, 4);
+        int type = 0;
+        //int colorType =  rnd.Next(0, 3);
 
         ShapeInfo shapeInfo = new ShapeInfo();
         shapeInfo.px = shapePosition.x;
@@ -154,7 +155,7 @@ public class ShapeManager : MonoBehaviour {
         shapeInfo.qz = shapeRotation.z;
         shapeInfo.qw = shapeRotation.w;
         shapeInfo.shapeType = type.GetHashCode();
-        shapeInfo.colorType = colorType;
+        //shapeInfo.colorType = colorType;
         shapeInfoList.Add(shapeInfo);
 
         GameObject shape = ShapeFromInfo(shapeInfo);
@@ -164,12 +165,12 @@ public class ShapeManager : MonoBehaviour {
 
     public GameObject ShapeFromInfo(ShapeInfo info)
     {
-        GameObject shape = GameObject.CreatePrimitive((PrimitiveType)info.shapeType);
+        GameObject shape = Instantiate(ShapePrefabs[0]);//GameObject.CreatePrimitive((PrimitiveType)info.shapeType);
         shape.transform.position = new Vector3(info.px, info.py, info.pz);
         shape.transform.rotation = new Quaternion(info.qx, info.qy, info.qz, info.qw);
         shape.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
-        shape.GetComponent<MeshRenderer>().material = mShapeMaterial;
-        shape.GetComponent<MeshRenderer>().material.color = colorTypeOptions[info.colorType];
+        //shape.GetComponent<MeshRenderer>().material = mShapeMaterial;
+        //shape.GetComponent<MeshRenderer>().material.color = colorTypeOptions[info.colorType];
         return shape;
     }
 
