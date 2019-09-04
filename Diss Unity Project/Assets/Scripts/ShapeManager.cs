@@ -41,8 +41,10 @@ public class ShapeManager : MonoBehaviour {
     public Material mShapeMaterial;
     private Color[] colorTypeOptions = {Color.cyan, Color.red, Color.yellow};
 
-	// Use this for initialization
-	void Start () {
+
+
+    // Use this for initialization
+    void Start () {
 
 	}
 
@@ -69,8 +71,15 @@ public class ShapeManager : MonoBehaviour {
                 Vector3 hitPosition = PNUtility.MatrixOps.GetPosition(placenoteTransform.Value);
                 Quaternion hitRotation = PNUtility.MatrixOps.GetRotation(placenoteTransform.Value);
 
+
+                Transform player = Camera.main.transform;
+                Vector3 pos = player.position;
+                pos.y = -.5f;
+
+
+
                 // add shape
-                AddShape(hitPosition, hitRotation);
+                AddShape(pos, Quaternion.Euler(Vector3.zero));
 
 
                 return true;
