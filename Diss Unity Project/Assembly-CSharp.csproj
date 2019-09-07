@@ -90,9 +90,7 @@
     <Compile Include="Assets\Placenote\Toolkits\SpatialCapture\CapturedPlaneUtility.cs" />
     <Compile Include="Assets\Placenote\Toolkits\SpatialCapture\PlaceMesh.cs" />
     <Compile Include="Assets\Placenote\Toolkits\SpatialCapture\PlacenoteWebAPI.cs" />
-    <Compile Include="Assets\Scripts\CreateSaveMap.cs" />
     <Compile Include="Assets\Scripts\MapInfoElement.cs" />
-    <Compile Include="Assets\Scripts\ModelManager.cs" />
     <Compile Include="Assets\Scripts\PlacenoteSampleView.cs" />
     <Compile Include="Assets\Scripts\RandomName.cs" />
     <Compile Include="Assets\Scripts\ShapeManager.cs" />

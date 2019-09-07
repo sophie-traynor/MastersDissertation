@@ -8,7 +8,7 @@ using Newtonsoft.Json.Linq;
 public class MapInfoElement : MonoBehaviour
 {
 	[SerializeField] Text mMapIdText;
-	[SerializeField] Text mLocationText;
+	//[SerializeField] Text mLocationText;
 	[SerializeField] Toggle mToggle;
 
 	public void Initialize (LibPlacenote.MapInfo mapInfo, ToggleGroup toggleGroup,
@@ -22,16 +22,16 @@ public class MapInfoElement : MonoBehaviour
 		gameObject.transform.SetParent (listParent);
 		mToggle.onValueChanged.AddListener (onToggleChanged);
 
-		if (Input.location.status != LocationServiceStatus.Running) {
-			mLocationText.text = "Distance Unknown - No user location";
-		} else if (mapInfo.metadata.location != null) {
-			var distance = Calc (Input.location.lastData.latitude, Input.location.lastData.longitude,
-				mapInfo.metadata.location.latitude,
-				mapInfo.metadata.location.longitude);
-			mLocationText.text = "Distance: " + distance.ToString("F3") + "km";
-		} else {
-			mLocationText.text = "Distance Unknown - Map does not have location";
-		}
+		//if (Input.location.status != LocationServiceStatus.Running) {
+		//	mLocationText.text = "Distance Unknown - No user location";
+		//} else if (mapInfo.metadata.location != null) {
+		//	var distance = Calc (Input.location.lastData.latitude, Input.location.lastData.longitude,
+		//		mapInfo.metadata.location.latitude,
+		//		mapInfo.metadata.location.longitude);
+		//	mLocationText.text = "Distance: " + distance.ToString("F3") + "km";
+		//} else {
+		//	mLocationText.text = "Distance Unknown - Map does not have location";
+		//}
 	}
 
 	public static double Calc(float lat1, float lon1, float lat2, float lon2)

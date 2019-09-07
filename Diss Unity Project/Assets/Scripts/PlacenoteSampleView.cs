@@ -18,12 +18,12 @@ public class PlacenoteSampleView : MonoBehaviour, PlacenoteListener
 	[SerializeField] GameObject mMapListPanel;
 	[SerializeField] GameObject mExitButton;
 	[SerializeField] GameObject mListElement;
-     [SerializeField] RectTransform mListContentParent;
+    [SerializeField] RectTransform mListContentParent;
 	[SerializeField] ToggleGroup mToggleGroup;
 	[SerializeField] Text mLabelText;
-	[SerializeField] Slider mRadiusSlider;
-	[SerializeField] float mMaxRadiusSearch;
-	[SerializeField] Text mRadiusLabel;
+	//[SerializeField] Slider mRadiusSlider;
+	//[SerializeField] float mMaxRadiusSearch;
+	//[SerializeField] Text mRadiusLabel;
 
 
     private UnityARSessionNativeInterface mSession;
@@ -61,7 +61,7 @@ public class PlacenoteSampleView : MonoBehaviour, PlacenoteListener
 		StartARKit ();
 		FeaturesVisualizer.EnablePointcloud ();
 		LibPlacenote.Instance.RegisterListener (this);
-		ResetSlider ();
+		//ResetSlider ();
 
 		// for simulator
 		#if UNITY_EDITOR
@@ -93,7 +93,7 @@ public class PlacenoteSampleView : MonoBehaviour, PlacenoteListener
 
 		mMapListPanel.SetActive (true);
 		mInitButtonPanel.SetActive (false);
-		mRadiusSlider.gameObject.SetActive (true);
+//		mRadiusSlider.gameObject.SetActive (true);
 		LibPlacenote.Instance.ListMaps ((mapList) => {
 			// render the map list!
 			foreach (LibPlacenote.MapInfo mapInfoItem in mapList) {
@@ -105,45 +105,45 @@ public class PlacenoteSampleView : MonoBehaviour, PlacenoteListener
 		});
 	}
 
-	public void OnRadiusSelect ()
-	{
-		Debug.Log ("Map search:" + mRadiusSlider.value.ToString("F2"));
-        mLabelText.text = "Filtering maps by GPS location";
+	//public void OnRadiusSelect ()
+	//{
+	//	Debug.Log ("Map search:" + mRadiusSlider.value.ToString("F2"));
+ //       mLabelText.text = "Filtering maps by GPS location";
 
-		LocationInfo locationInfo = Input.location.lastData;
+	//	LocationInfo locationInfo = Input.location.lastData;
 
 
-		float radiusSearch = mRadiusSlider.value * mMaxRadiusSearch;
-		mRadiusLabel.text = "Distance Filter: " + (radiusSearch / 1000.0).ToString ("F2") + " km";
+	//	float radiusSearch = mRadiusSlider.value * mMaxRadiusSearch;
+	//	mRadiusLabel.text = "Distance Filter: " + (radiusSearch / 1000.0).ToString ("F2") + " km";
 
-		LibPlacenote.Instance.SearchMaps(locationInfo.latitude, locationInfo.longitude, radiusSearch, 
-			(mapList) => {
-			foreach (Transform t in mListContentParent.transform) {
-				Destroy (t.gameObject);
-			}
-			// render the map list!
-			foreach (LibPlacenote.MapInfo mapId in mapList) {
-				if (mapId.metadata.userdata != null) {
-					Debug.Log(mapId.metadata.userdata.ToString (Formatting.None));
-				}
-				AddMapToList (mapId);
-			}
+	//	LibPlacenote.Instance.SearchMaps(locationInfo.latitude, locationInfo.longitude, radiusSearch, 
+	//		(mapList) => {
+	//		foreach (Transform t in mListContentParent.transform) {
+	//			Destroy (t.gameObject);
+	//		}
+	//		// render the map list!
+	//		foreach (LibPlacenote.MapInfo mapId in mapList) {
+	//			if (mapId.metadata.userdata != null) {
+	//				Debug.Log(mapId.metadata.userdata.ToString (Formatting.None));
+	//			}
+	//			AddMapToList (mapId);
+	//		}
 
-            mLabelText.text = "Map List Complete";
-		});
-	}
+ //           mLabelText.text = "Map List Complete";
+	//	});
+	//}
 
-	public void ResetSlider() {
-		mRadiusSlider.value = 1.0f;
-		mRadiusLabel.text = "Distance Filter: Off";
-	}
+	//public void ResetSlider() {
+	//	mRadiusSlider.value = 1.0f;
+	//	mRadiusLabel.text = "Distance Filter: Off";
+	//}
 
 	public void OnCancelClick ()
 	{
 		mMapSelectedPanel.SetActive (false);
 		mMapListPanel.SetActive (false);
 		mInitButtonPanel.SetActive (true);
-		ResetSlider ();
+		//ResetSlider ();
 	}
 
 
@@ -174,7 +174,7 @@ public class PlacenoteSampleView : MonoBehaviour, PlacenoteListener
 	{
 		mSelectedMapInfo = mapInfo;
 		mMapSelectedPanel.SetActive (true);
-		mRadiusSlider.gameObject.SetActive (false);
+		//mRadiusSlider.gameObject.SetActive (false);
 	}
 
 
@@ -187,7 +187,7 @@ public class PlacenoteSampleView : MonoBehaviour, PlacenoteListener
 			return;
 		}
 
-		ResetSlider ();
+		//ResetSlider ();
 		mLabelText.text = "Loading Map ID: " + mSelectedMapId;
 		LibPlacenote.Instance.LoadMap (mSelectedMapId,
 			(completed, faulted, percentage) => {
