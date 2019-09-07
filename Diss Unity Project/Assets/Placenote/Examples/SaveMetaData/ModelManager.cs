@@ -41,14 +41,22 @@ namespace SaveMetaData
         public List<ModelInfo> ModelInfoList = new List<ModelInfo>();
         public List<GameObject> ModelObjList = new List<GameObject>();
 
+        int objType = 0;
+
         // Functions for adding and deleting models
+        public void OnPlaceMacClicked()
+        {
+            objType = 1;
+            OnAddShapeClicked();
+        }
 
         public void OnAddShapeClicked()
         {
             // generate random object type
 
-            System.Random rnd = new System.Random();
-            int type = rnd.Next(0, 3);
+            //System.Random rnd = new System.Random();
+            //rnd.Next(0, 3)
+            int type = objType;//rnd.Next(0, 3)
 
             Vector3 position = Camera.main.transform.position + Camera.main.transform.forward * 0.5f;
             Quaternion rotation = Camera.main.transform.rotation;

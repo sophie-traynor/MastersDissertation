@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 677373821015435690}
   - component: {fileID: 3697542020699197478}
   - component: {fileID: 2350819392089501448}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,13 +111,13 @@ GameObject:
   - component: {fileID: 7249585771095880562}
   - component: {fileID: 770586826805426769}
   - component: {fileID: 6478807366441815637}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Canvas (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6062432557386131884
 RectTransform:
   m_ObjectHideFlags: 0
@@ -210,8 +210,8 @@ GameObject:
   - component: {fileID: 7821337416481803806}
   - component: {fileID: 1199709913846644353}
   - component: {fileID: 5413824845204036615}
-  m_Layer: 0
-  m_Name: mac_logo
+  m_Layer: 8
+  m_Name: mac_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 440906163841918581}
   - component: {fileID: 354526294471342332}
   - component: {fileID: 2367278650183530819}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -377,7 +377,7 @@ GameObject:
   - component: {fileID: 7048735291203963247}
   - component: {fileID: 9070802484621647649}
   - component: {fileID: 262153426616277389}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -452,7 +452,7 @@ GameObject:
   - component: {fileID: 3653077764799394354}
   - component: {fileID: 686026807982457080}
   - component: {fileID: 7247455149642707917}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: New Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -545,9 +545,9 @@ GameObject:
   - component: {fileID: 3527751623136061512}
   - component: {fileID: 2750010691004776655}
   - component: {fileID: 2669462783575539139}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: mac_lab
-  m_TagString: Untagged
+  m_TagString: mac
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -559,16 +559,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5072656729549310214}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 14.082975, y: 51.15405, z: 4.21882}
+  m_LocalScale: {x: 0.3, y: 0.8, z: 0.1}
   m_Children:
   - {fileID: 3653077764799394354}
   - {fileID: 9122876917234558269}
   - {fileID: 44793837053355022}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3527751623136061512
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -640,7 +640,7 @@ GameObject:
   - component: {fileID: 4565540569160525652}
   - component: {fileID: 6378395800790703140}
   - component: {fileID: 1841279178721777098}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -723,7 +723,7 @@ GameObject:
   - component: {fileID: 8265240093639733199}
   - component: {fileID: 8645602712848520240}
   - component: {fileID: 4205013732844436774}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -799,7 +799,7 @@ GameObject:
   - component: {fileID: 1567304719260610789}
   - component: {fileID: 3941210905694315980}
   - component: {fileID: 7412958368801791805}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -895,8 +895,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9122876917234558269}
-  m_Layer: 0
-  m_Name: Logo
+  m_Layer: 8
+  m_Name: macLogo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -931,13 +931,13 @@ GameObject:
   - component: {fileID: 2225557877688856874}
   - component: {fileID: 2274716876243076193}
   - component: {fileID: 7335465307176164710}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Canvas (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4800678933880801505
 RectTransform:
   m_ObjectHideFlags: 0

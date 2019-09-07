@@ -18,14 +18,15 @@ public class PlacenoteSampleView : MonoBehaviour, PlacenoteListener
 	[SerializeField] GameObject mMapListPanel;
 	[SerializeField] GameObject mExitButton;
 	[SerializeField] GameObject mListElement;
-	[SerializeField] RectTransform mListContentParent;
+     [SerializeField] RectTransform mListContentParent;
 	[SerializeField] ToggleGroup mToggleGroup;
 	[SerializeField] Text mLabelText;
 	[SerializeField] Slider mRadiusSlider;
 	[SerializeField] float mMaxRadiusSearch;
 	[SerializeField] Text mRadiusLabel;
 
-	private UnityARSessionNativeInterface mSession;
+
+    private UnityARSessionNativeInterface mSession;
 
 	private bool mARInit = false;
 
@@ -70,13 +71,15 @@ public class PlacenoteSampleView : MonoBehaviour, PlacenoteListener
 		
 	void Update ()
 	{
-		if (!mARInit && LibPlacenote.Instance.Initialized()) {
+
+        if (!mARInit && LibPlacenote.Instance.Initialized()) {
 			mARInit = true;
 			mLabelText.text = "Ready to Start!";
 		}
 	}
 
-	public void OnListMapClick ()
+
+    public void OnListMapClick ()
 	{
 		if (!LibPlacenote.Instance.Initialized()) {
 			Debug.Log ("SDK not yet initialized");

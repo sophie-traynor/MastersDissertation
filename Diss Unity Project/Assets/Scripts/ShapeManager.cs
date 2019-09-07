@@ -6,7 +6,7 @@ using UnityEngine.XR.iOS;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 
- // Classes to hold shape information
+ //Shape Info Classes
 
 [System.Serializable]
 public class ShapeInfo
@@ -19,7 +19,6 @@ public class ShapeInfo
     public float qz;
     public float qw;
     public int shapeType;
-    public int colorType;
 }
 
 
@@ -31,140 +30,64 @@ public class ShapeList
 
 
 
- // Main Class for Managing Markers
+ //Main Class
 
 public class ShapeManager : MonoBehaviour {
 
     public List<GameObject> ShapePrefabs = new List<GameObject>();
     public List<ShapeInfo> shapeInfoList = new List<ShapeInfo>();
     public List<GameObject> shapeObjList = new List<GameObject>();
-    public Material mShapeMaterial;
-    private Color[] colorTypeOptions = {Color.cyan, Color.red, Color.yellow};
+   
+    public int objType = 0;
 
-
-
-    // Use this for initialization
     void Start () {
 
 	}
 
-    // The HitTest to Add a Marker
-
-    bool HitTestWithResultType(ARPoint point, ARHitTestResultType resultTypes)
-    {
-        List<ARHitTestResult> hitResults = UnityARSessionNativeInterface.GetARSessionNativeInterface().HitTest(point, resultTypes);
-
-        if (hitResults.Count > 0)
-        {
-            foreach (var hitResult in hitResults)
-            {
-
-                Debug.Log("Got hit!");
-
-                Vector3 position = UnityARMatrixOps.GetPosition(hitResult.worldTransform);
-                Quaternion rotation = UnityARMatrixOps.GetRotation(hitResult.worldTransform);
-
-                //Transform to placenote frame of reference (planes are detected in ARKit frame of reference)
-                Matrix4x4 worldTransform = Matrix4x4.TRS(position, rotation, Vector3.one);
-                Matrix4x4? placenoteTransform = LibPlacenote.Instance.ProcessPose(worldTransform);
-
-                Vector3 hitPosition = PNUtility.MatrixOps.GetPosition(placenoteTransform.Value);
-                Quaternion hitRotation = PNUtility.MatrixOps.GetRotation(placenoteTransform.Value);
-
-
-                Transform player = Camera.main.transform;
-                Vector3 pos = player.position;
-                pos.y = -.5f;
-
-
-
-                // add shape
-                AddShape(pos, Quaternion.Euler(Vector3.zero));
-
-
-                return true;
-            }
-        }
-        return false;
-    }
-
-
-    // Update function checks for hittest
-
-    void Update()
-    {
-
-        // Check if the screen is touched
-
-        if (Input.touchCount > 0)
-        {
-            var touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Began)
-            {
-                if (EventSystem.current.currentSelectedGameObject == null)
-                {
-
-                    Debug.Log("Not touching a UI button. Moving on.");
-
-                    // add new shape
-                    var screenPosition = Camera.main.ScreenToViewportPoint(touch.position);
-                    ARPoint point = new ARPoint
-                    {
-                        x = screenPosition.x,
-                        y = screenPosition.y
-                    };
-
-                    // prioritize reults types
-                    ARHitTestResultType[] resultTypes = {
-                        //ARHitTestResultType.ARHitTestResultTypeExistingPlaneUsingExtent,
-                        //ARHitTestResultType.ARHitTestResultTypeExistingPlane,
-                        //ARHitTestResultType.ARHitTestResultTypeEstimatedHorizontalPlane,
-                        //ARHitTestResultType.ARHitTestResultTypeEstimatedVerticalPlane,
-                        ARHitTestResultType.ARHitTestResultTypeFeaturePoint
-                    };
-
-                    foreach (ARHitTestResultType resultType in resultTypes)
-                    {
-                        if (HitTestWithResultType(point, resultType))
-                        {
-                            Debug.Log("Found a hit test result");
-                            return;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-	public void OnSimulatorDropShape()
+	public void OnAddArrowClick()
 	{
-		Vector3 dropPosition = Camera.main.transform.position + Camera.main.transform.forward * 0.3f;
-		Quaternion dropRotation = Camera.main.transform.rotation;
-
-		AddShape(dropPosition, dropRotation);
-
+          objType = 0;
+		AddShape();
 	}
 
-
-    // All shape management functions (add shapes, save shapes to metadata etc.
-
-    public void AddShape(Vector3 shapePosition, Quaternion shapeRotation)
+    public void OnPlaceMacClick()
     {
-        //System.Random rnd = new System.Random();
-        //PrimitiveType type = (PrimitiveType)rnd.Next(0, 4);
-        int type = 0;
-        //int colorType =  rnd.Next(0, 3);
+        objType = 1;
+        AddShape();
+    }
+
+    public void OnPlaceWindowsClick()
+    {
+        objType = 2;
+        AddShape();
+    }
+
+    public void OnPlaceLinuxClick()
+    {
+        objType = 3;
+        AddShape();
+    }
+
+
+
+    public void AddShape()
+    {
+        Vector3 placePosition = Camera.main.transform.position + Camera.main.transform.forward * 0.3f;
+        Quaternion placeRotation = Camera.main.transform.rotation;
+
+        int type = objType;
+
 
         ShapeInfo shapeInfo = new ShapeInfo();
-        shapeInfo.px = shapePosition.x;
-        shapeInfo.py = shapePosition.y;
-        shapeInfo.pz = shapePosition.z;
-        shapeInfo.qx = shapeRotation.x;
-        shapeInfo.qy = shapeRotation.y;
-        shapeInfo.qz = shapeRotation.z;
-        shapeInfo.qw = shapeRotation.w;
-        shapeInfo.shapeType = type.GetHashCode();
-        //shapeInfo.colorType = colorType;
+        shapeInfo.px = placePosition.x;
+        shapeInfo.py = placePosition.y;
+        shapeInfo.pz = placePosition.z;
+        shapeInfo.qx = placeRotation.x;
+        shapeInfo.qy = placeRotation.y;
+        shapeInfo.qz = placeRotation.z;
+        shapeInfo.qw = placeRotation.w;
+        shapeInfo.shapeType = type;
+
         shapeInfoList.Add(shapeInfo);
 
         GameObject shape = ShapeFromInfo(shapeInfo);
@@ -174,12 +97,17 @@ public class ShapeManager : MonoBehaviour {
 
     public GameObject ShapeFromInfo(ShapeInfo info)
     {
-        GameObject shape = Instantiate(ShapePrefabs[0]);//GameObject.CreatePrimitive((PrimitiveType)info.shapeType);
+        GameObject shape = Instantiate(ShapePrefabs[info.shapeType]);
         shape.transform.position = new Vector3(info.px, info.py, info.pz);
         shape.transform.rotation = new Quaternion(info.qx, info.qy, info.qz, info.qw);
-        shape.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
-        //shape.GetComponent<MeshRenderer>().material = mShapeMaterial;
-        //shape.GetComponent<MeshRenderer>().material.color = colorTypeOptions[info.colorType];
+        if (objType == 0)
+        {
+            shape.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
+        }
+        else if (objType == 1 || objType == 2 || objType == 3)
+        {
+            shape.transform.localScale = new Vector3(0.03f, 0.08f, 0.01f);
+        }
         return shape;
     }
 
