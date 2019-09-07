@@ -930,7 +930,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8352942, g: 0.21960786, b: 0.28627452, a: 0.49019608}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1209,7 +1209,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 420322404}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7890fc2e4f8cb4dedbe095c9dfd34d38, type: 3}
+  m_Script: {fileID: 11500000, guid: 0956e3adc39844872bb81e774c3418ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mMapSelectedPanel: {fileID: 1788237316}
