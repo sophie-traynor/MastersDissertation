@@ -9,7 +9,7 @@ using System.IO;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 
-public class PlacenoteSampleView : MonoBehaviour, PlacenoteListener
+public class NavigatAR : MonoBehaviour, PlacenoteListener
 {
 	[SerializeField] GameObject mMapSelectedPanel;
 	[SerializeField] GameObject mInitButtonPanel;

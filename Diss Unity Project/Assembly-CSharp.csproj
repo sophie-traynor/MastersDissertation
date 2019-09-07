@@ -90,8 +90,10 @@
     <Compile Include="Assets\Placenote\Toolkits\SpatialCapture\CapturedPlaneUtility.cs" />
     <Compile Include="Assets\Placenote\Toolkits\SpatialCapture\PlaceMesh.cs" />
     <Compile Include="Assets\Placenote\Toolkits\SpatialCapture\PlacenoteWebAPI.cs" />
-    <Compile Include="Assets\Scripts\MapInfoElement.cs" />
-    <Compile Include="Assets\Scripts\PlacenoteSampleView.cs" />
+    <Compile Include="Assets\Scripts\CreateSaveMap.cs" />
+    <Compile Include="Assets\Scripts\MapDetails.cs" />
+    <Compile Include="Assets\Scripts\ModelManager.cs" />
+    <Compile Include="Assets\Scripts\NavigatAR.cs" />
     <Compile Include="Assets\Scripts\RandomName.cs" />
     <Compile Include="Assets\Scripts\ShapeManager.cs" />
     <Compile Include="Assets\Scripts\SwitchScene.cs" />
@@ -158,30 +160,12 @@
     <Compile Include="Assets\WanzyeeStudio\Scripts\Basic\Utility\JsonNetUtility.cs" />
     <None Include="Assets\Placenote\EditorCoroutines\Readme - v1.1.0.txt" />
     <None Include="Assets\WanzyeeStudio\ThirdParty\SaladLab\Json.Net.Unity3D\link.xml" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\WanzyeeStudio\ThirdParty\SaladLab\Json.Net.Unity3D\LICENSE.txt" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\UnityARKitPlugin\ARKitRemote\ARKITREMOTE.txt" />
     <None Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\Shaders\YUVShaderLinear.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
-    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Placenote\Shaders\PointCloud.shader" />
     <None Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\Shaders\YUVShader.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\Placenote\Shaders\VertexColorPointCloud.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/sophietraynor/Desktop/MSc Dissertation/MSc Dissertation/MastersDissertation/Diss Unity Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
