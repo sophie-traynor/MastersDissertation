@@ -1231,7 +1231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShapePrefabs:
   - {fileID: 5844110915397012081, guid: 83feebac67999426884643f9b3206e6e, type: 3}
-  - {fileID: 5072656729549310214, guid: 1d1b9aff252714f3eb82fcffb9013d82, type: 3}
+  - {fileID: 5044552997568359472, guid: 50fce53994f6b4b5d908890a12c8092a, type: 3}
   - {fileID: 5072656729549310214, guid: b5d51c53f33bb46529ce385e61433007, type: 3}
   - {fileID: 5072656729549310214, guid: 781ad7a0a321849209989c16707de813, type: 3}
   shapeInfoList: []
