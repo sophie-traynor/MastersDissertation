@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using Newtonsoft.Json.Linq;
 
-public class MapInfoElement : MonoBehaviour
+public class MapDetails : MonoBehaviour
 {
 	[SerializeField] Text mMapIdText;
 	//[SerializeField] Text mLocationText;

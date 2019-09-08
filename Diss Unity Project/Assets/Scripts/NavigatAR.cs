@@ -163,7 +163,7 @@ public class NavigatAR : MonoBehaviour, PlacenoteListener
 	void AddMapToList (LibPlacenote.MapInfo mapInfo)
 	{
 		GameObject newElement = Instantiate (mListElement) as GameObject;
-		MapInfoElement listElement = newElement.GetComponent<MapInfoElement> ();
+		MapDetails listElement = newElement.GetComponent<MapDetails> ();
 		listElement.Initialize (mapInfo, mToggleGroup, mListContentParent, (value) => {
 			OnMapSelected (mapInfo);
 		});
@@ -321,7 +321,7 @@ public class NavigatAR : MonoBehaviour, PlacenoteListener
 				mExitButton.SetActive(false);
 
 				LibPlacenote.MapMetadataSettable metadata = new LibPlacenote.MapMetadataSettable();
-				metadata.name = RandomName.Get ();
+                metadata.name = "Test";
 				mLabelText.text = "Saved Map Name: " + metadata.name;
 
 				JObject userdata = new JObject ();
