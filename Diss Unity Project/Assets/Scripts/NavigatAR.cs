@@ -11,20 +11,21 @@ using Newtonsoft.Json;
 
 public class NavigatAR : MonoBehaviour, PlacenoteListener
 {
-	[SerializeField] GameObject mMapSelectedPanel;
-	[SerializeField] GameObject mInitButtonPanel;
-	[SerializeField] GameObject mMappingButtonPanel;
-	[SerializeField] GameObject mSimulatorAddShapeButton;
-	[SerializeField] GameObject mMapListPanel;
-	[SerializeField] GameObject mExitButton;
+	[SerializeField] GameObject MapSelectedPanel;
+	[SerializeField] GameObject InitPanel;
+    [SerializeField] GameObject InitButtonsPanel;
+    [SerializeField] GameObject MapNamePanel;
+    [SerializeField] InputField MapNameInputField;
+    [SerializeField] GameObject MappingPanel;
+	[SerializeField] GameObject AddArrowButton;
+	[SerializeField] GameObject MapListPanel;
+	[SerializeField] GameObject ExitButton;
 	[SerializeField] GameObject mListElement;
     [SerializeField] RectTransform mListContentParent;
 	[SerializeField] ToggleGroup mToggleGroup;
 	[SerializeField] Text mLabelText;
-	//[SerializeField] Slider mRadiusSlider;
-	//[SerializeField] float mMaxRadiusSearch;
-	//[SerializeField] Text mRadiusLabel;
 
+    public string mapName;
 
     private UnityARSessionNativeInterface mSession;
 
@@ -54,18 +55,17 @@ public class NavigatAR : MonoBehaviour, PlacenoteListener
 	{
 		Input.location.Start ();
 
-		mMapListPanel.SetActive (false);
+		MapListPanel.SetActive (false);
 
 		mSession = UnityARSessionNativeInterface.GetARSessionNativeInterface ();
 
 		StartARKit ();
 		FeaturesVisualizer.EnablePointcloud ();
 		LibPlacenote.Instance.RegisterListener (this);
-		//ResetSlider ();
 
 		// for simulator
 		#if UNITY_EDITOR
-		mSimulatorAddShapeButton.SetActive(true);
+		AddArrowButton.SetActive(true);
 		#endif
 	}
 		
@@ -91,9 +91,8 @@ public class NavigatAR : MonoBehaviour, PlacenoteListener
 		}
 
 
-		mMapListPanel.SetActive (true);
-		mInitButtonPanel.SetActive (false);
-//		mRadiusSlider.gameObject.SetActive (true);
+		MapListPanel.SetActive (true);
+		InitPanel.SetActive (false);
 		LibPlacenote.Instance.ListMaps ((mapList) => {
 			// render the map list!
 			foreach (LibPlacenote.MapInfo mapInfoItem in mapList) {
@@ -105,53 +104,25 @@ public class NavigatAR : MonoBehaviour, PlacenoteListener
 		});
 	}
 
-	//public void OnRadiusSelect ()
-	//{
-	//	Debug.Log ("Map search:" + mRadiusSlider.value.ToString("F2"));
- //       mLabelText.text = "Filtering maps by GPS location";
-
-	//	LocationInfo locationInfo = Input.location.lastData;
-
-
-	//	float radiusSearch = mRadiusSlider.value * mMaxRadiusSearch;
-	//	mRadiusLabel.text = "Distance Filter: " + (radiusSearch / 1000.0).ToString ("F2") + " km";
-
-	//	LibPlacenote.Instance.SearchMaps(locationInfo.latitude, locationInfo.longitude, radiusSearch, 
-	//		(mapList) => {
-	//		foreach (Transform t in mListContentParent.transform) {
-	//			Destroy (t.gameObject);
-	//		}
-	//		// render the map list!
-	//		foreach (LibPlacenote.MapInfo mapId in mapList) {
-	//			if (mapId.metadata.userdata != null) {
-	//				Debug.Log(mapId.metadata.userdata.ToString (Formatting.None));
-	//			}
-	//			AddMapToList (mapId);
-	//		}
-
- //           mLabelText.text = "Map List Complete";
-	//	});
-	//}
-
-	//public void ResetSlider() {
-	//	mRadiusSlider.value = 1.0f;
-	//	mRadiusLabel.text = "Distance Filter: Off";
-	//}
 
 	public void OnCancelClick ()
 	{
-		mMapSelectedPanel.SetActive (false);
-		mMapListPanel.SetActive (false);
-		mInitButtonPanel.SetActive (true);
-		//ResetSlider ();
-	}
+		MapSelectedPanel.SetActive (false);
+		MapListPanel.SetActive (false);
+		InitPanel.SetActive (true);
+        InitButtonsPanel.SetActive(true);
+        MapNamePanel.SetActive(false);
+
+    }
 
 
 	public void OnExitClick ()
 	{
-		mInitButtonPanel.SetActive (true);
-		mExitButton.SetActive (false);
-		mMappingButtonPanel.SetActive (false);
+		InitPanel.SetActive (true);
+        InitButtonsPanel.SetActive(true);
+        MapNamePanel.SetActive(false);
+        ExitButton.SetActive (false);
+		MappingPanel.SetActive (false);
 
 		LibPlacenote.Instance.StopSession ();
         FeaturesVisualizer.clearPointcloud();
@@ -173,8 +144,7 @@ public class NavigatAR : MonoBehaviour, PlacenoteListener
 	void OnMapSelected (LibPlacenote.MapInfo mapInfo)
 	{
 		mSelectedMapInfo = mapInfo;
-		mMapSelectedPanel.SetActive (true);
-		//mRadiusSlider.gameObject.SetActive (false);
+		MapSelectedPanel.SetActive (true);
 	}
 
 
@@ -187,16 +157,15 @@ public class NavigatAR : MonoBehaviour, PlacenoteListener
 			return;
 		}
 
-		//ResetSlider ();
 		mLabelText.text = "Loading Map ID: " + mSelectedMapId;
 		LibPlacenote.Instance.LoadMap (mSelectedMapId,
 			(completed, faulted, percentage) => {
 				if (completed) {
-					mMapSelectedPanel.SetActive (false);
-					mMapListPanel.SetActive (false);
-					mInitButtonPanel.SetActive (false);
-					mMappingButtonPanel.SetActive(false);
-					mExitButton.SetActive (true);
+					MapSelectedPanel.SetActive (false);
+					MapListPanel.SetActive (false);
+					InitPanel.SetActive (false);
+					MappingPanel.SetActive(false);
+					ExitButton.SetActive (true);
 
 					LibPlacenote.Instance.StartSession ();
 
@@ -235,7 +204,7 @@ public class NavigatAR : MonoBehaviour, PlacenoteListener
 		mLabelText.text = "Deleting Map ID: " + mSelectedMapId;
 		LibPlacenote.Instance.DeleteMap (mSelectedMapId, (deleted, errMsg) => {
 			if (deleted) {
-				mMapSelectedPanel.SetActive (false);
+				MapSelectedPanel.SetActive (false);
 				mLabelText.text = "Deleted ID: " + mSelectedMapId;
 				OnListMapClick();
 			} else {
@@ -244,9 +213,33 @@ public class NavigatAR : MonoBehaviour, PlacenoteListener
 		});
 	}
 
+    public void OnMapNameBackClick()
+    {
+        InitButtonsPanel.SetActive(true);
+        MapNamePanel.SetActive(false);
+    }
 
+    public void OnNewMapClick()
+    {
+        InitButtonsPanel.SetActive(false);
+        MapNamePanel.SetActive(true);
+    }
 
-	public void OnNewMapClick ()
+    public void OnMapNameOkClick()
+    {
+        mapName = MapNameInputField.text;
+        if (mapName is null)
+        {
+            Debug.Log("map name null");
+        }
+        else
+        {
+            CreateNewMap();
+            Debug.Log("creating map with name" + mapName);
+        }
+    }
+
+    public void CreateNewMap ()
 	{
 		ConfigureSession ();
 
@@ -255,10 +248,11 @@ public class NavigatAR : MonoBehaviour, PlacenoteListener
 			return;
 		}
 
-		mInitButtonPanel.SetActive (false);
-		mMappingButtonPanel.SetActive (true);
+		InitPanel.SetActive (false);
+		MappingPanel.SetActive (true);
+        ExitButton.SetActive(true);
 
-		Debug.Log ("Started Session");
+        Debug.Log ("Started Session");
 		LibPlacenote.Instance.StartSession ();
 
 		if (mReportDebug) {
@@ -316,12 +310,14 @@ public class NavigatAR : MonoBehaviour, PlacenoteListener
                 FeaturesVisualizer.clearPointcloud();
 
 				mSaveMapId = mapId;
-				mInitButtonPanel.SetActive (true);
-				mMappingButtonPanel.SetActive (false);
-				mExitButton.SetActive(false);
+				InitPanel.SetActive (true);
+                InitButtonsPanel.SetActive(true);
+                MapNamePanel.SetActive(false);
+                MappingPanel.SetActive (false);
+				ExitButton.SetActive(false);
 
 				LibPlacenote.MapMetadataSettable metadata = new LibPlacenote.MapMetadataSettable();
-                metadata.name = "Test";
+                metadata.name = mapName;
 				mLabelText.text = "Saved Map Name: " + metadata.name;
 
 				JObject userdata = new JObject ();
