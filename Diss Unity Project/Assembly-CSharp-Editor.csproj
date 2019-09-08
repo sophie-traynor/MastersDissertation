@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\MultiLanguageTexts\Assets\Scripts\Editor\MultiLanguageTextEditor.cs" />
     <Compile Include="Assets\Placenote\Editor\APIKeyCheck.cs" />
     <Compile Include="Assets\Placenote\Editor\LibraryCheck.cs" />
     <Compile Include="Assets\Placenote\Editor\PlacenoteMeshEditor.cs" />

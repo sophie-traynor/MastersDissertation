@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 24670478}
   - component: {fileID: 24670477}
   m_Layer: 5
-  m_Name: NewMapButton
+  m_Name: newMapBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 26258641}
   - component: {fileID: 26258640}
   m_Layer: 5
-  m_Name: AddCourseInduction
+  m_Name: courseInductionBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 101369953}
   - component: {fileID: 101369952}
   m_Layer: 5
-  m_Name: InitButtonsPanel
+  m_Name: initialButtonsPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -474,7 +474,7 @@ GameObject:
   - component: {fileID: 160300050}
   - component: {fileID: 160300049}
   m_Layer: 5
-  m_Name: MapNamePanel
+  m_Name: mapNamePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -553,7 +553,7 @@ GameObject:
   - component: {fileID: 202125530}
   - component: {fileID: 202125529}
   m_Layer: 5
-  m_Name: MapNameBackButton
+  m_Name: mapNameBackBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -685,7 +685,7 @@ GameObject:
   - component: {fileID: 217234052}
   - component: {fileID: 217234051}
   m_Layer: 5
-  m_Name: AddLinux
+  m_Name: linuxBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -944,7 +944,7 @@ GameObject:
   - component: {fileID: 256282867}
   - component: {fileID: 256282866}
   m_Layer: 5
-  m_Name: AddLibrary
+  m_Name: libraryBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1177,7 +1177,7 @@ GameObject:
   - component: {fileID: 366217784}
   - component: {fileID: 366217783}
   m_Layer: 5
-  m_Name: MapListPanel
+  m_Name: listPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1367,7 +1367,7 @@ GameObject:
   - component: {fileID: 383468362}
   - component: {fileID: 383468361}
   m_Layer: 5
-  m_Name: AddMac
+  m_Name: macBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1500,7 +1500,7 @@ GameObject:
   - component: {fileID: 420322408}
   - component: {fileID: 420322409}
   m_Layer: 5
-  m_Name: MainPanel
+  m_Name: mainPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1630,7 +1630,7 @@ GameObject:
   - component: {fileID: 563750857}
   - component: {fileID: 563750856}
   m_Layer: 5
-  m_Name: SaveMapButton
+  m_Name: saveMapBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1762,7 +1762,7 @@ GameObject:
   - component: {fileID: 593708276}
   - component: {fileID: 593708275}
   m_Layer: 5
-  m_Name: LoadButton
+  m_Name: loadBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1981,7 +1981,7 @@ GameObject:
   m_Component:
   - component: {fileID: 615359012}
   m_Layer: 5
-  m_Name: MappingPanel
+  m_Name: mappingPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2027,7 +2027,7 @@ GameObject:
   - component: {fileID: 680062317}
   - component: {fileID: 680062316}
   m_Layer: 5
-  m_Name: BackButton
+  m_Name: backBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2158,7 +2158,7 @@ GameObject:
   - component: {fileID: 800071337}
   - component: {fileID: 800071336}
   m_Layer: 5
-  m_Name: LabelPanel
+  m_Name: labelPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2235,7 +2235,7 @@ GameObject:
   - component: {fileID: 819846113}
   - component: {fileID: 819846112}
   m_Layer: 5
-  m_Name: AddWindows
+  m_Name: windowsBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2630,7 +2630,7 @@ GameObject:
   m_Component:
   - component: {fileID: 891097825}
   m_Layer: 5
-  m_Name: InitPanel
+  m_Name: initialPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2667,7 +2667,7 @@ GameObject:
   m_Component:
   - component: {fileID: 927060901}
   m_Layer: 5
-  m_Name: MapListPanel
+  m_Name: mapListPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2780,7 +2780,7 @@ GameObject:
   - component: {fileID: 1260712034}
   - component: {fileID: 1260712033}
   m_Layer: 5
-  m_Name: AddArrowButton
+  m_Name: arrowBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3043,7 +3043,7 @@ GameObject:
   - component: {fileID: 1391172709}
   - component: {fileID: 1391172708}
   m_Layer: 5
-  m_Name: CancelButton
+  m_Name: cancelBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3175,7 +3175,7 @@ GameObject:
   - component: {fileID: 1438969036}
   - component: {fileID: 1438969035}
   m_Layer: 5
-  m_Name: OkButton
+  m_Name: okBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3575,7 +3575,7 @@ GameObject:
   - component: {fileID: 1716056203}
   - component: {fileID: 1716056202}
   m_Layer: 5
-  m_Name: AddLaptopPickup
+  m_Name: laptopPickupBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3750,7 +3750,7 @@ GameObject:
   - component: {fileID: 1774105467}
   - component: {fileID: 1774105466}
   m_Layer: 5
-  m_Name: LoadMapButton
+  m_Name: loadMapBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3879,7 +3879,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1788237317}
   m_Layer: 5
-  m_Name: MapSelectedPanel
+  m_Name: mapSelectedPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3997,7 +3997,7 @@ GameObject:
   - component: {fileID: 2079196989}
   - component: {fileID: 2079196988}
   m_Layer: 5
-  m_Name: ExitButton
+  m_Name: exitBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4128,7 +4128,7 @@ GameObject:
   - component: {fileID: 2097528939}
   - component: {fileID: 2097528938}
   m_Layer: 5
-  m_Name: LabelText
+  m_Name: labelText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4208,7 +4208,7 @@ GameObject:
   - component: {fileID: 2115975664}
   - component: {fileID: 2115975663}
   m_Layer: 5
-  m_Name: MapNameInputField
+  m_Name: mapNameInputField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

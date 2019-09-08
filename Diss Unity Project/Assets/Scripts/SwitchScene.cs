@@ -15,7 +15,7 @@ public class SwitchScene : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public void SwitchToRouteScreen()
+    public void SwitchToMapScreen()
     {
         SceneManager.LoadScene(2);
     }
@@ -27,7 +27,7 @@ public class SwitchScene : MonoBehaviour
     {
         SceneManager.LoadScene(4);
     }
-    public void SwitchToCreateRouteARCameraScreen()
+    public void SwitchToSelectLanguagesScreen()
     {
         SceneManager.LoadScene(5);
     }

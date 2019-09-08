@@ -62,6 +62,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\MultiLanguageTexts\Assets\Scripts\MenuManager.cs" />
+    <Compile Include="Assets\MultiLanguageTexts\Assets\Scripts\MultiLanguageManager.cs" />
+    <Compile Include="Assets\MultiLanguageTexts\Assets\Scripts\MultiLanguageText.cs" />
+    <Compile Include="Assets\MultiLanguageTexts\Assets\Scripts\Traduction.cs" />
     <Compile Include="Assets\Placenote\EditorCoroutines\Scripts\EditorCoroutineExtensions.cs" />
     <Compile Include="Assets\Placenote\EditorCoroutines\Scripts\EditorCoroutines.cs" />
     <Compile Include="Assets\Placenote\Examples\ARKitHitTesting\ARKitHitTesting.cs" />
@@ -92,7 +96,6 @@
     <Compile Include="Assets\Placenote\Toolkits\SpatialCapture\PlacenoteWebAPI.cs" />
     <Compile Include="Assets\Scripts\MapDetails.cs" />
     <Compile Include="Assets\Scripts\NavigatAR.cs" />
-    <Compile Include="Assets\Scripts\RandomName.cs" />
     <Compile Include="Assets\Scripts\ShapeManager.cs" />
     <Compile Include="Assets\Scripts\SwitchScene.cs" />
     <Compile Include="Assets\UnityARKitPlugin\ARKitRemote\ARKitFaceTrackingRemoteConnection.cs" />
@@ -177,6 +180,7 @@
     <None Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\Shaders\YUVShader.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+    <None Include="Assets\MultiLanguageTexts\README.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\Placenote\Shaders\VertexColorPointCloud.shader" />
