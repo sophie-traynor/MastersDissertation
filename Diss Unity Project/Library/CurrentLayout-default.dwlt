@@ -337,21 +337,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Prefabs
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/sophietraynor/Desktop/MSc Dissertation/MSc Dissertation/MastersDissertation/Diss
     Unity Project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 167}
-    m_SelectedIDs: 002f0000
-    m_LastClickedID: 12032
-    m_ExpandedIDs: 000000009a2d0000b62d00001e2e0000d22e00006a370000763e0000863e00003c4300004043000000ca9a3b
+    scrollPos: {x: 0, y: 69.45653}
+    m_SelectedIDs: 862f0000
+    m_LastClickedID: 12166
+    m_ExpandedIDs: 00000000f62d0000122e0000802e00003e2f00003e340000403400004234000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -379,7 +379,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009a2d0000b62d00001e2e0000d22e0000082f00006a370000
+    m_ExpandedIDs: 00000000f62d0000122e0000802e00003e2f00003e3400004034000042340000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -500,9 +500,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ec300000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 8858ffffee8dffff208effffe28effffee8efffff28efffff68efffffa8effff068fffffbe93ffff1c94ffff9c94ffffd294ffffd494ffff2a95ffff2e95ffff3295ffff3695ffff4295ffffae95ffff0296ffff3497ffff2a98ffff5298ffff1099ffff4699ffff089affff849affff889affff8c9affff909affff9c9affff989bfffff29bffff1a9cffffc29dffffd8a4ffff66a5ffffeea6ffff16a7ffffcaa7fffff8a7ffff28a8ffffdaaaffff3aabffffaeabffff06acffff2eacffff06b6ffffc8c3ffff54ceffffa4ceffffd2ceffff58cfffff8ccfffffb2d2ffff98d4ffff34d6ffff7ad7ffff1ef4ffffdaf6ffff18f9ffff8cf9ffffb0f9ffffdaf9fffffef9ffff22faffff4cfaffff7afbffff0c3b00009c3b0000a63b0000c63b0000ea430000f443000002450000124500008a4500009e450000be4500001c4600002c460000ac460000c04600003647000046470000c8490000e2490000a44a0000ce4a0000444c0000be4c0000d04c0000b24d0000c24d0000a44e0000be4e0000d64f00000a50000070500000f650000014510000c6570000d8570000e2580000665900007a5900001a6000002460000090610000c4610000846200008e620000b862000090630000a0630000ce630000e0630000026900002c690000426a00008c6a0000
+      m_ExpandedIDs: 7ee9ffff8ae9ffffa6400000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -562,9 +562,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 362.44193, y: 982.32416, z: -2875.2783}
+    m_Target: {x: 789.5717, y: 195.02295, z: -974.7654}
     speed: 2
-    m_Value: {x: 362.44193, y: 982.32416, z: -2875.2783}
+    m_Value: {x: 789.5717, y: 195.02295, z: -974.7654}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -597,9 +597,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1386.882
+    m_Target: 855.33325
     speed: 2
-    m_Value: 1386.882
+    m_Value: 855.33325
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -618,7 +618,7 @@ MonoBehaviour:
     m_DynamicClip: 1
     m_OcclusionCulling: 0
   m_ShowGlobalGrid: 1
-  m_LastSceneViewRotation: {x: 0.08462419, y: -0.103835486, z: -0.008867263, w: -0.9909497}
+  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
