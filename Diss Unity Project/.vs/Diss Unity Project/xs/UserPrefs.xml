@@ -4,8 +4,7 @@
       <File FileName="Assets/Scripts/NavigatAR.cs" Line="238" Column="57" />
       <File FileName="Assets/MultiLanguageTexts/README.txt" Line="1" Column="1" />
       <File FileName="Assets/MultiLanguageTexts/Assets/Scripts/MenuManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/SwitchScene.cs" Line="30" Column="46" />
-      <File FileName="Assets/Scripts/ShapeManager.cs" Line="121" Column="53" />
+      <File FileName="Assets/Scripts/ShapeManager.cs" Line="116" Column="52" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
