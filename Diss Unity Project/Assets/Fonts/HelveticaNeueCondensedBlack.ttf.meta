@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c885b5ef83bcf40149a857560485b524
+guid: 43655b5a3c7424e5ab47fedfdff5c397
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,10 +8,13 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Lemon/Milk
+  fontName: Helvetica Neue
   fontNames:
-  - Lemon/Milk
-  fallbackFontReferences: []
+  - Helvetica Neue
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 3e48c535765244944aca7268f706b175, type: 3}
+  - {fileID: 12800000, guid: 3c82eb6f0da8f45ce9f02f6b37fce46f, type: 3}
+  - {fileID: 12800000, guid: d4f09abf98e1844898894626eb2b7cd5, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

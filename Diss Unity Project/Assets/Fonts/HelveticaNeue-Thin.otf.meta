@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: db0fbfcb046894ffeb123939c38269a3
+guid: d4f09abf98e1844898894626eb2b7cd5
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Cocogoose
+  fontName: Helvetica Neue
   fontNames:
-  - Cocogoose
+  - Helvetica Neue
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
