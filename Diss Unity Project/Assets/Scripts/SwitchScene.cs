@@ -26,18 +26,11 @@ public class SwitchScene : MonoBehaviour
     {
         SceneManager.LoadScene(4);
     }
-    public void SwitchToTutorialOneScreen()
+    public void SwitchToTutorialScreen()
     {
         SceneManager.LoadScene(5);
     }
-    public void SwitchToTutorialTwoScreen()
-    {
-        SceneManager.LoadScene(6);
-    }
-    public void SwitchToTutorialThreeScreen()
-    {
-        SceneManager.LoadScene(7);
-    }
+
 
 
 }

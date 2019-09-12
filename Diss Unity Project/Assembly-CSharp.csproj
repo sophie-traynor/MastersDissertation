@@ -97,6 +97,7 @@
     <Compile Include="Assets\Scripts\MapDetails.cs" />
     <Compile Include="Assets\Scripts\NavigatAR.cs" />
     <Compile Include="Assets\Scripts\ShapeManager.cs" />
+    <Compile Include="Assets\Scripts\SwipeTutorial.cs" />
     <Compile Include="Assets\Scripts\SwitchScene.cs" />
     <Compile Include="Assets\UnityARKitPlugin\ARKitRemote\ARKitFaceTrackingRemoteConnection.cs" />
     <Compile Include="Assets\UnityARKitPlugin\ARKitRemote\ARKitRemoteConnection.cs" />
