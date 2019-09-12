@@ -451,7 +451,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1488577280}
         m_MethodName: SwitchToMenuScreen
         m_Mode: 1
         m_Arguments:
