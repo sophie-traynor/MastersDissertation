@@ -25,7 +25,6 @@ ScriptsOnlyBuild:
     - TMPro.TMP_StyleSheet
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
-    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -128,17 +127,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11202}
     - Class: 114
-      Script: {instanceID: 11398}
+      Script: {instanceID: 11400}
     - Class: 114
-      Script: {instanceID: 11510}
+      Script: {instanceID: 11512}
     - Class: 114
-      Script: {instanceID: 11576}
+      Script: {instanceID: 11578}
     - Class: 114
-      Script: {instanceID: 11590}
+      Script: {instanceID: 11592}
     - Class: 114
-      Script: {instanceID: 11630}
+      Script: {instanceID: 11632}
     - Class: 114
-      Script: {instanceID: 11648}
+      Script: {instanceID: 11650}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -193,7 +192,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11202}
     - Class: 114
-      Script: {instanceID: 11576}
+      Script: {instanceID: 11578}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -240,11 +239,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10718}
     - Class: 114
-      Script: {instanceID: 10810}
-    - Class: 114
       Script: {instanceID: 11202}
     - Class: 114
-      Script: {instanceID: 11576}
+      Script: {instanceID: 11578}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -295,7 +292,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11202}
     - Class: 114
-      Script: {instanceID: 11576}
+      Script: {instanceID: 11578}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -358,9 +355,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11202}
     - Class: 114
-      Script: {instanceID: 11358}
+      Script: {instanceID: 11360}
     - Class: 114
-      Script: {instanceID: 11576}
+      Script: {instanceID: 11578}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -419,9 +416,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11202}
     - Class: 114
-      Script: {instanceID: 11576}
+      Script: {instanceID: 11254}
     - Class: 114
-      Script: {instanceID: 13508}
+      Script: {instanceID: 11578}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -975,6 +972,12 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
+      Hash: 77da67449f780c99295964fadb4c2d7f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SwipeTutorial
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -1129,12 +1132,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 77da67449f780c99295964fadb4c2d7f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SwipeTutorial
   platform: 9
   scenePathNames:
   - Assets/Scenes/start_scene.unity

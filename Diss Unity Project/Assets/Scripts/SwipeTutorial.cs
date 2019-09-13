@@ -82,7 +82,8 @@ public class SwipeTutorial : MonoBehaviour, IDragHandler, IEndDragHandler
             circle1.color = activeColor;
             circle2.color = notActiveColor;
             circle3.color = notActiveColor;
-            
+            skipBtn.SetActive(true);
+            doneBtn.SetActive(false);
         }
         else if (currentPanel == 2)
         {
