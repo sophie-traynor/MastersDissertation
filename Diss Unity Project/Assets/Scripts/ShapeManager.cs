@@ -38,15 +38,17 @@ public class ShapeManager : MonoBehaviour {
     public List<ShapeInfo> shapeInfoList = new List<ShapeInfo>();
     public List<GameObject> shapeObjList = new List<GameObject>();
    
-    public int objType = 0;
+    public int objType;
+    public int factCount;
 
     void Start () {
-
+        objType = 0;
+        factCount = 7;
 	}
 
 	public void OnAddArrowClick()
 	{
-          objType = 0;
+        objType = 0;
 		AddShape();
 	}
 
@@ -86,6 +88,16 @@ public class ShapeManager : MonoBehaviour {
         AddShape();
     }
 
+    public void OnPlaceFactClick()
+    {
+        if (factCount == 17)
+        {
+            factCount = 7;
+        }
+        objType = factCount;
+        factCount++;
+        AddShape();
+    }
 
 
     public void AddShape()
