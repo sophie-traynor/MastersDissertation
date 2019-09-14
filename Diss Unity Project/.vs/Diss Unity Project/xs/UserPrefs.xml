@@ -1,12 +1,7 @@
 ﻿<Properties StartupConfiguration="{B0BE730C-DFA4-8E09-C259-9E52B0B70117}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/SwitchScene.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/NavigatAR.cs">
     <Files>
-      <File FileName="Assets/Scripts/NavigatAR.cs" Line="9" Column="1" />
-      <File FileName="Assets/MultiLanguageTexts/README.txt" Line="1" Column="1" />
-      <File FileName="Assets/MultiLanguageTexts/Assets/Scripts/MenuManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ShapeManager.cs" Line="116" Column="52" />
-      <File FileName="Assets/Scripts/SwipeTutorial.cs" Line="99" Column="41" />
-      <File FileName="Assets/Scripts/SwitchScene.cs" Line="29" Column="33" />
+      <File FileName="Assets/Scripts/NavigatAR.cs" Line="17" Column="45" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

@@ -2446,9 +2446,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Ensure you are at the start location which can be seen on the map.
-
-    Click AR Camera from the menu and select a location from the list.'
+  m_Text: "Welcome to navigatAR! \nYour augmented reality  navigation guide!\n\nTo
+    get started, click the AR Camera button from the menu and select a location from
+    the list."
 --- !u!222 &1613077932
 CanvasRenderer:
   m_ObjectHideFlags: 0

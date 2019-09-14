@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/menu_scene.unity
     guid: 54fc02a545a92f245b6a83692100a8c1
   - enabled: 1
-    path: Assets/Scenes/select_language_scene.unity
-    guid: e047f271314544c3b836a47917715753
-  - enabled: 1
     path: Assets/Scenes/ar_camera_scene.unity
     guid: 1257efda9ace3439485a7e2c7516465e
   - enabled: 1

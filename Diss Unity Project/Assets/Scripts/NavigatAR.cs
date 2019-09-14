@@ -144,7 +144,7 @@ public class NavigatAR : MonoBehaviour, PlacenoteListener
 	void OnMapSelected (LibPlacenote.MapInfo mapInfo)
 	{
 		mSelectedMapInfo = mapInfo;
-		MapSelectedPanel.SetActive (true);
+        MapSelectedPanel.SetActive (true);
 	}
 
 
@@ -194,24 +194,24 @@ public class NavigatAR : MonoBehaviour, PlacenoteListener
 		);
 	}
 
-	public void OnDeleteMapClicked ()
-	{
-		if (!LibPlacenote.Instance.Initialized()) {
-			Debug.Log ("SDK not yet initialized");
-			return;
-		}
+	//public void OnDeleteMapClicked ()
+	//{
+	//	if (!LibPlacenote.Instance.Initialized()) {
+	//		Debug.Log ("SDK not yet initialized");
+	//		return;
+	//	}
 
-		mLabelText.text = "Deleting Map ID: " + mSelectedMapId;
-		LibPlacenote.Instance.DeleteMap (mSelectedMapId, (deleted, errMsg) => {
-			if (deleted) {
-				MapSelectedPanel.SetActive (false);
-				mLabelText.text = "Deleted ID: " + mSelectedMapId;
-				OnListMapClick();
-			} else {
-				mLabelText.text = "Failed to delete ID: " + mSelectedMapId;
-			}
-		});
-	}
+	//	mLabelText.text = "Deleting Map ID: " + mSelectedMapId;
+	//	LibPlacenote.Instance.DeleteMap (mSelectedMapId, (deleted, errMsg) => {
+	//		if (deleted) {
+	//			MapSelectedPanel.SetActive (false);
+	//			mLabelText.text = "Deleted ID: " + mSelectedMapId;
+	//			OnListMapClick();
+	//		} else {
+	//			mLabelText.text = "Failed to delete ID: " + mSelectedMapId;
+	//		}
+	//	});
+	//}
 
     public void OnMapNameBackClick()
     {
@@ -375,4 +375,7 @@ public class NavigatAR : MonoBehaviour, PlacenoteListener
 			}
 		}
 	}
+
+
+
 }

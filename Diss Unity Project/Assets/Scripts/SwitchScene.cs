@@ -14,21 +14,17 @@ public class SwitchScene : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
-    public void SwitchToSelectLanguagesScreen()
+    public void SwitchToARCameraScreen()
     {
         SceneManager.LoadScene(2);
     }
-    public void SwitchToARCameraScreen()
+    public void SwitchToMapScreen()
     {
         SceneManager.LoadScene(3);
     }
-    public void SwitchToMapScreen()
-    {
-        SceneManager.LoadScene(4);
-    }
     public void SwitchToTutorialScreen()
     {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(4);
     }
 
 

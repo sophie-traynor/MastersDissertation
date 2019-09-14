@@ -62,10 +62,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\MultiLanguageTexts\Assets\Scripts\MenuManager.cs" />
-    <Compile Include="Assets\MultiLanguageTexts\Assets\Scripts\MultiLanguageManager.cs" />
-    <Compile Include="Assets\MultiLanguageTexts\Assets\Scripts\MultiLanguageText.cs" />
-    <Compile Include="Assets\MultiLanguageTexts\Assets\Scripts\Traduction.cs" />
     <Compile Include="Assets\Placenote\EditorCoroutines\Scripts\EditorCoroutineExtensions.cs" />
     <Compile Include="Assets\Placenote\EditorCoroutines\Scripts\EditorCoroutines.cs" />
     <Compile Include="Assets\Placenote\Examples\ARKitHitTesting\ARKitHitTesting.cs" />
@@ -181,7 +177,6 @@
     <None Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\Shaders\YUVShader.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
-    <None Include="Assets\MultiLanguageTexts\README.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\Placenote\Shaders\VertexColorPointCloud.shader" />
