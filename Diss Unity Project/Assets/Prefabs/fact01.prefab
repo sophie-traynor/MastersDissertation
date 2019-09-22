@@ -78,9 +78,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Cardiff University was ranked 5th amongst UK universities in the 2014 Research
-    Excellence Framework (REF) based on quality, and is a member of the Russell Group,
-    a group of 24 leading UK research intensive universities.
+  m_Text: 'In 2014, the Research Excellence Framework ranked Cardiff Univeristy as
+    5th in the UK and is 1 of the 24 members of the Russell Group classifying as research
+    intensive universities. '
 --- !u!1 &5044552997568359472
 GameObject:
   m_ObjectHideFlags: 0
