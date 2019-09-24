@@ -130,7 +130,7 @@ public class ShapeManager : MonoBehaviour {
         GameObject shape = Instantiate(ShapePrefabs[info.shapeType]);
         shape.transform.position = new Vector3(info.px, info.py, info.pz);
         shape.transform.rotation = new Quaternion(info.qx, info.qy, info.qz, info.qw);
-        shape.transform.localScale = new Vector3(1f, 1f, 1f);
+        shape.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
 
         return shape;
     }

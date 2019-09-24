@@ -59,8 +59,8 @@ public class NavigatAR : MonoBehaviour, PlacenoteListener
 
 		mSession = UnityARSessionNativeInterface.GetARSessionNativeInterface ();
 
-		StartARKit ();
-		FeaturesVisualizer.EnablePointcloud ();
+        StartARKit();
+
 		LibPlacenote.Instance.RegisterListener (this);
 
 		// for simulator
@@ -125,6 +125,7 @@ public class NavigatAR : MonoBehaviour, PlacenoteListener
 		MappingPanel.SetActive (false);
 
 		LibPlacenote.Instance.StopSession ();
+        FeaturesVisualizer.DisablePointcloud(); 
         FeaturesVisualizer.clearPointcloud();
         GetComponent<ShapeManager>().ClearShapes();
 
@@ -150,9 +151,11 @@ public class NavigatAR : MonoBehaviour, PlacenoteListener
 
 	public void OnLoadMapClicked ()
 	{
-		ConfigureSession ();
+        ConfigureSession ();
+        FeaturesVisualizer.DisablePointcloud();
+        FeaturesVisualizer.clearPointcloud();
 
-		if (!LibPlacenote.Instance.Initialized()) {
+        if (!LibPlacenote.Instance.Initialized()) {
 			Debug.Log ("SDK not yet initialized");
 			return;
 		}
@@ -194,25 +197,6 @@ public class NavigatAR : MonoBehaviour, PlacenoteListener
 		);
 	}
 
-	//public void OnDeleteMapClicked ()
-	//{
-	//	if (!LibPlacenote.Instance.Initialized()) {
-	//		Debug.Log ("SDK not yet initialized");
-	//		return;
-	//	}
-
-	//	mLabelText.text = "Deleting Map ID: " + mSelectedMapId;
-	//	LibPlacenote.Instance.DeleteMap (mSelectedMapId, (deleted, errMsg) => {
-	//		if (deleted) {
-	//			MapSelectedPanel.SetActive (false);
-	//			mLabelText.text = "Deleted ID: " + mSelectedMapId;
-	//			OnListMapClick();
-	//		} else {
-	//			mLabelText.text = "Failed to delete ID: " + mSelectedMapId;
-	//		}
-	//	});
-	//}
-
     public void OnMapNameBackClick()
     {
         InitButtonsPanel.SetActive(true);
@@ -221,6 +205,7 @@ public class NavigatAR : MonoBehaviour, PlacenoteListener
 
     public void OnNewMapClick()
     {
+        FeaturesVisualizer.EnablePointcloud();
         InitButtonsPanel.SetActive(false);
         MapNamePanel.SetActive(true);
     }
@@ -307,9 +292,10 @@ public class NavigatAR : MonoBehaviour, PlacenoteListener
 		LibPlacenote.Instance.SaveMap (
 			(mapId) => {
 				LibPlacenote.Instance.StopSession ();
+                FeaturesVisualizer.DisablePointcloud();
                 FeaturesVisualizer.clearPointcloud();
 
-				mSaveMapId = mapId;
+                mSaveMapId = mapId;
 				InitPanel.SetActive (true);
                 InitButtonsPanel.SetActive(true);
                 MapNamePanel.SetActive(false);
