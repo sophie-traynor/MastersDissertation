@@ -160,7 +160,7 @@ public class NavigatAR : MonoBehaviour, PlacenoteListener
 			return;
 		}
 
-		mLabelText.text = "Loading Map ID: " + mSelectedMapId;
+		mLabelText.text = "Loading Route ID: " + mSelectedMapId;
 		LibPlacenote.Instance.LoadMap (mSelectedMapId,
 			(completed, faulted, percentage) => {
 				if (completed) {
@@ -191,7 +191,7 @@ public class NavigatAR : MonoBehaviour, PlacenoteListener
 				} else if (faulted) {
 					mLabelText.text = "Failed to load ID: " + mSelectedMapId;
 				} else {
-					mLabelText.text = "Map Download: " + percentage.ToString ("F2") + "/1.0";
+					mLabelText.text = "Route Download: " + percentage.ToString ("F2") + "/1.0";
 				}
 			}
 		);
@@ -215,12 +215,12 @@ public class NavigatAR : MonoBehaviour, PlacenoteListener
         mapName = MapNameInputField.text;
         if (mapName is null)
         {
-            Debug.Log("map name null");
+            Debug.Log("Route name null");
         }
         else
         {
             CreateNewMap();
-            Debug.Log("creating map with name" + mapName);
+            Debug.Log("creating route with name" + mapName);
         }
     }
 
@@ -304,7 +304,7 @@ public class NavigatAR : MonoBehaviour, PlacenoteListener
 
 				LibPlacenote.MapMetadataSettable metadata = new LibPlacenote.MapMetadataSettable();
                 metadata.name = mapName;
-				mLabelText.text = "Saved Map Name: " + metadata.name;
+				mLabelText.text = "Saved Route Name: " + metadata.name;
 
 				JObject userdata = new JObject ();
 				metadata.userdata = userdata;
@@ -334,10 +334,10 @@ public class NavigatAR : MonoBehaviour, PlacenoteListener
 					mLabelText.text = "Upload Complete:" + mCurrMapDetails.name;
 				}
 				else if (faulted) {
-					mLabelText.text = "Upload of Map Named: " + mCurrMapDetails.name + "faulted";
+					mLabelText.text = "Upload of Route Named: " + mCurrMapDetails.name + "faulted";
 				}
 				else {
-					mLabelText.text = "Uploading Map Named: " + mCurrMapDetails.name + "(" + percentage.ToString("F2") + "/1.0)";
+					mLabelText.text = "Uploading Route Named: " + mCurrMapDetails.name + "(" + percentage.ToString("F2") + "/1.0)";
 				}
 			}
 		);
