@@ -64,6 +64,17 @@
   <ItemGroup>
     <Compile Include="Assets\Placenote\EditorCoroutines\Scripts\EditorCoroutineExtensions.cs" />
     <Compile Include="Assets\Placenote\EditorCoroutines\Scripts\EditorCoroutines.cs" />
+    <Compile Include="Assets\Placenote\Examples\ARKitHitTesting\ARKitHitTesting.cs" />
+    <Compile Include="Assets\Placenote\Examples\ARKitHitTesting\MarkerManager.cs" />
+    <Compile Include="Assets\Placenote\Examples\ARKitPlaneSaver\ARKitPlaneSaver.cs" />
+    <Compile Include="Assets\Placenote\Examples\ARKitPlaneSaver\PlacenoteARAnchorManager.cs" />
+    <Compile Include="Assets\Placenote\Examples\ARKitPlaneSaver\PlacenoteARGeneratePlane.cs" />
+    <Compile Include="Assets\Placenote\Examples\ARKitPlaneSaver\PlacenotePlaneMeshRender.cs" />
+    <Compile Include="Assets\Placenote\Examples\ARKitPlaneSaver\PlacenotePlaneUtility.cs" />
+    <Compile Include="Assets\Placenote\Examples\SaveAndLoadAMap\SaveAndLoadAMap.cs" />
+    <Compile Include="Assets\Placenote\Examples\SaveMetaData\ModelManager.cs" />
+    <Compile Include="Assets\Placenote\Examples\SaveMetaData\SaveMetaData.cs" />
+    <Compile Include="Assets\Placenote\Examples\SpatialCapture\PlacenoteSpatialCaptureSample.cs" />
     <Compile Include="Assets\Placenote\LibPlacenote\FeaturesVisualizer.cs" />
     <Compile Include="Assets\Placenote\LibPlacenote\LibPlacenote.cs" />
     <Compile Include="Assets\Placenote\LibPlacenote\MainThreadTaskQueue.cs" />
