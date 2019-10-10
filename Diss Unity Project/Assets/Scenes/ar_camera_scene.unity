@@ -289,7 +289,7 @@ GameObject:
   - component: {fileID: 160300050}
   - component: {fileID: 160300049}
   m_Layer: 5
-  m_Name: routeNamePanel
+  m_Name: enterRouteNamePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1144,7 +1144,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 420322408}
-        m_MethodName: OnListMapClick
+        m_MethodName: OnLoadRouteListClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1477,21 +1477,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85de7af2ca54a4bdaa809d2387b8f029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MapSelectedPanel: {fileID: 1788237316}
-  InitPanel: {fileID: 891097824}
-  InitButtonsPanel: {fileID: 101369950}
-  MapNamePanel: {fileID: 160300047}
-  MapNameInputField: {fileID: 2115975663}
-  MappingPanel: {fileID: 615359011}
-  AddArrowButton: {fileID: 278892828}
-  MapListPanel: {fileID: 927060900}
-  ExitButton: {fileID: 896944322}
+  routeSelectedPanel: {fileID: 1788237316}
+  initialPanel: {fileID: 891097824}
+  initialButtonsPanel: {fileID: 101369950}
+  enterRouteNamePanel: {fileID: 160300047}
+  routeNameInputField: {fileID: 2115975663}
+  mappingPanel: {fileID: 615359011}
+  routeListPanel: {fileID: 927060900}
+  exitButton: {fileID: 896944322}
   mListElement: {fileID: 1170995837258984, guid: a3ef81b9c1147467396e3a086b211961,
     type: 3}
   mListContentParent: {fileID: 601585232}
   mToggleGroup: {fileID: 601585235}
-  mLabelText: {fileID: 2097528938}
-  mapName: 
+  notificationPanelText: {fileID: 2097528938}
+  routeName: 
 --- !u!114 &420322409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3166,7 +3165,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 420322408}
-        m_MethodName: OnLoadMapClicked
+        m_MethodName: OnLoadRouteClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4498,7 +4497,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 420322408}
-        m_MethodName: OnSaveMapClick
+        m_MethodName: OnSaveRouteClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4631,7 +4630,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 420322408}
-        m_MethodName: OnMapNameOkClick
+        m_MethodName: OnRouteNameOkClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5225,7 +5224,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 420322408}
-        m_MethodName: OnNewMapClick
+        m_MethodName: OnNewRouteClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5358,7 +5357,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 420322408}
-        m_MethodName: OnMapNameBackClick
+        m_MethodName: OnRouteNameBackClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

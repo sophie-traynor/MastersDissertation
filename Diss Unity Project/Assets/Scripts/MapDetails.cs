@@ -5,6 +5,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using Newtonsoft.Json.Linq;
 
+//https://github.com/Placenote/PlacenoteSDK-Unity/blob/master/Assets/Placenote/Examples/RandomShapes/MapInfoElement.cs
 public class MapDetails : MonoBehaviour
 {
 	[SerializeField] Text mMapIdText;

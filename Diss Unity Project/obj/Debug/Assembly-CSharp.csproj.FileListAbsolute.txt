@@ -1,0 +1,2 @@
+/Users/sophietraynor/Desktop/MSc Dissertation/MSc Dissertation/MastersDissertation/Diss Unity Project/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache
+/Users/sophietraynor/Desktop/MSc Dissertation/MSc Dissertation/MastersDissertation/Diss Unity Project/obj/Debug/Assembly-CSharp.csproj.CoreCompileInputs.cache
