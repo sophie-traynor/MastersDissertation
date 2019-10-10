@@ -78,12 +78,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Cardiff University is ranked 32nd in The Times & The Sunday Times Good
-    University Guide 2019.
+  m_Text: 'The Times & The Sunday Times measure overall student saisfaction, research
+    quality, degree results and much more.
 
-    The Times and Sunday Times University Guide measures student satisfaction, research
-    quality, graduate prospects, entrance qualifications, degree results achieved,
-    student/staff ratios, services and facilities spend, and dropout rates.'
+    They have ranked Cardiff University 32nd in the Good Univeristy Guide for 2019.'
 --- !u!1 &5044552997568359472
 GameObject:
   m_ObjectHideFlags: 0

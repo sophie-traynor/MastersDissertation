@@ -78,14 +78,17 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'We have 31,935 students enrolled, representing over 130 countries.
+  m_Text: '
 
+    Cardiff Univeristy has students from over 130 countries around the world.
 
-    23,480 undergraduates
+    The enrollment total of students is 31,395 with a beakdown of:
 
-    8,455 postgraduates
+    - 23,480 Undergraduate Students
 
-    7,975 international students (non-UK EU included)'
+    - 8,455 Postgraduate Students
+
+    - 7,975 International Students '
 --- !u!1 &5044552997568359472
 GameObject:
   m_ObjectHideFlags: 0

@@ -78,13 +78,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Our graduates are sought-after by employers - more so than most other major
-    UK universities.
+  m_Text: '95.7% of Cardiff University Graduates find employement or go on to further
+    education after graduating
 
-
-    95.7% of graduates enter employment, further study or both shortly after graduating*
-
-    160,000 alumni across the globe from more than 180 countries.'
+'
 --- !u!1 &5044552997568359472
 GameObject:
   m_ObjectHideFlags: 0

@@ -78,10 +78,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "- 5th university nationally in the Research Excellence Framework (REF)
-    on rankings based on quality\n- 2nd university nationally in the Research Excellence
-    Framework (REF) on rankings based on impact\nour research contract awards have
-    a total value of \xA3100m"
+  m_Text: Cardiff University has been ranked 5th in the Research Excellence Framework
+    for Quality and 2nd for impact
 --- !u!1 &5044552997568359472
 GameObject:
   m_ObjectHideFlags: 0

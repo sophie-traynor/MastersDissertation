@@ -78,10 +78,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "-we are 8th in the UK for interactions with SMEs since 2008*\n-we rank
-    5th in the UK for estimated turnover (\xA372m) of all active graduate start-ups
-    during the period 2008/09 - 2013/14**\n-our researchers include two Nobel Prize
-    winners - Professor Sir Martin Evans and Professor Robert Huber."
+  m_Text: Cardiff University has two Nobel Prize winners coming from  researchers
+    Professor Sir Martin Evans and Professor Robert Huber
 --- !u!1 &5044552997568359472
 GameObject:
   m_ObjectHideFlags: 0

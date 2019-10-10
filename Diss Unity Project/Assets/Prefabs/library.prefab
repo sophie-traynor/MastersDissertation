@@ -380,18 +380,17 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'The Trevithick Library provides information resources for engineering,
-    computer science and informatics, and physics and astronomy.
+  m_Text: 'Trevithick Library contains books, journals and other resources for Computer
+    Science, Engineering, Informatics and Physics and Astronomy Students
+
+    Library Facilities:
 
 
-    Facilities include:
+    - Printer
 
+    - Computers
 
-    - myPrint
-
-    - IT suites
-
-    - Group study rooms.'
+    - Study Areas'
 --- !u!1 &6735404308759185466
 GameObject:
   m_ObjectHideFlags: 0

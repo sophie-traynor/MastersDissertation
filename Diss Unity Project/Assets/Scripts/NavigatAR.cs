@@ -198,12 +198,12 @@ public class NavigatAR : MonoBehaviour, PlacenoteListener
     //ARKit Initialsation settings for when the application is NOT running in Unity Editor
 	private void StartARKit ()
 	{
-		#if !UNITY_EDITOR
-		mLabelText.text = "Initializing ARKit";
+        #if !UNITY_EDITOR
+		notificationPanelText.text = "Initializing ARKit";
 		Application.targetFrameRate = 60;
 		ConfigureSession ();
-		#endif
-	}
+        #endif
+    }
 
     //Sets ARKit configuration settings for when the application is NOT running in Unity Editor
     private void ConfigureSession() {

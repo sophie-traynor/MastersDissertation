@@ -78,9 +78,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '83% overall satisfaction in National Student Survey 2018
-
-    1,000 students volunteer in the local community each year.'
+  m_Text: From the National Student Survey in 2018, Cardiff University got an overall
+    satisfaction rating of 83%
 --- !u!1 &5044552997568359472
 GameObject:
   m_ObjectHideFlags: 0

@@ -630,11 +630,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Used in the teaching of multimedia and scientific computing, this laboratory
-    of iMacs also supports those students who prefer the Macintosh platform for their
-    general day-to-day computing tasks. In addition, this laboratory allows students
-    to experiment with app development, either on their own or as part of a moderated
-    project.
+  m_Text: The Mac Lab is mainly used to teaching multimedia and scientific computing.
+    However, student may access this laboratory if they prefer to use Macs for their
+    everyday tasks or if they want to explore iOS app development.
 --- !u!1 &6735404308759185466
 GameObject:
   m_ObjectHideFlags: 0

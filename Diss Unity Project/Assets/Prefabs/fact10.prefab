@@ -78,13 +78,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'The University is ranked 26th in The Complete University Guide 2020, and
-    tops the league table in Wales.
-
-
-    The Complete University Guide has been publishing university and related league
-    tables online since 2007. The  subject league tables use four measures: Student
-    Satisfaction, Research Quality, Entry Standards and Graduate Prospects.'
+  m_Text: The Complete University Guide has ranked Cardiff Univeristy as 26th in the
+    league tables which is the highest in all of Wales!
 --- !u!1 &5044552997568359472
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,6 +25,7 @@ ScriptsOnlyBuild:
     - TMPro.TMP_StyleSheet
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -443,12 +444,6 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
-      Hash: d6e0cfb1fd05d8aa7ab9b9ee2bdc7817
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: ARKitPlaneSaver
-    className: ARKitPlaneSaver
-  - hash:
-      serializedVersion: 2
       Hash: fc108ce7d98c40ac0907e8ca7f500c76
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -477,12 +472,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Image
-  - hash:
-      serializedVersion: 2
-      Hash: 769852b4ed25cdb363ce98eabd6612a2
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SaveAndLoadAMap
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -539,19 +528,13 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
-      Hash: d44c109dd94e3c4062bfe742dc065c9a
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: SaveMetaData
-    className: ModelManager
-  - hash:
-      serializedVersion: 2
       Hash: 3eb50ade86b2d0b6210c951820d1c12e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UnityARCameraManager
   - hash:
       serializedVersion: 2
-      Hash: 4d99e55900822e949a7baeb05395681b
+      Hash: 62a661a496db137c4d473bdec6e8cd41
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NavigatAR
@@ -659,12 +642,6 @@ ScriptsOnlyBuild:
     className: ConnectToEditor
   - hash:
       serializedVersion: 2
-      Hash: 356860b8dbb744d3fbbe4113309dae14
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: ARKitHitTesting
-    className: ARKitHitTesting
-  - hash:
-      serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -713,12 +690,6 @@ ScriptsOnlyBuild:
     className: UnityARAmbient
   - hash:
       serializedVersion: 2
-      Hash: a04deb35ecba6556a2a19c0507f4cadd
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PlacenoteSpatialCaptureSample
-  - hash:
-      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -753,12 +724,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextContainer
-  - hash:
-      serializedVersion: 2
-      Hash: 34a930a99767ab6dd77e3a938b7016bf
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: ARKitPlaneSaver
-    className: PlacenoteARGeneratePlane
   - hash:
       serializedVersion: 2
       Hash: c82096d19a6e2b824bd7be67ca53c23c
@@ -875,22 +840,10 @@ ScriptsOnlyBuild:
     className: UnityARUserAnchorComponent
   - hash:
       serializedVersion: 2
-      Hash: a7029126508ea703b31b24bd6fa43389
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: ARKitPlaneSaver
-    className: PlacenotePlaneMeshRender
-  - hash:
-      serializedVersion: 2
       Hash: ae83e830e7a90c0aff918c4c2e520825
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: GraphicRaycaster
-  - hash:
-      serializedVersion: 2
-      Hash: 15ef984b7b0143596828c2c4cfd1036c
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: ARKitHitTesting
-    className: MarkerManager
   - hash:
       serializedVersion: 2
       Hash: 88cc9df3c6fc697bfbeacd24c0d6f2d7
@@ -1023,12 +976,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Slider
-  - hash:
-      serializedVersion: 2
-      Hash: 356860b8dbb744d3fbbe4113309dae14
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: SaveMetaData
-    className: SaveMetaData
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f

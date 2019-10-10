@@ -78,8 +78,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "We are the 10th largest university in the UK in terms of student numbers
-    with a total estimated income for 2017/18 of \xA3518m."
+  m_Text: "Cardiff Univeristy is the 10th Biggest Univeristy in the UK in terms of
+    students with a total estimated income of \xA3518,000,000 in 2017/18."
 --- !u!1 &5044552997568359472
 GameObject:
   m_ObjectHideFlags: 0

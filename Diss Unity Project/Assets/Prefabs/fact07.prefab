@@ -78,9 +78,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "-our research contract awards have a total value of \xA3100m\n-we have
-    won six Queen's Anniversary Prizes\nmore than \xA345m has been invested in Cardiff
-    University/Fusion IP spinouts"
+  m_Text: "\n- Cardiff Univeristy has won 6 Queen's Anniversary Prizes!\n- Cardiff
+    Univeristy has research contracts adding up to a toal of \xA3100,000,000"
 --- !u!1 &5044552997568359472
 GameObject:
   m_ObjectHideFlags: 0
