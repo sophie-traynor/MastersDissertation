@@ -9,168 +9,257 @@ using System.IO;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 
-//https://github.com/Placenote/PlacenoteSDK-Unity/blob/master/Assets/Placenote/Examples/RandomShapes/PlacenoteSampleView.cs
 public class NavigatAR : MonoBehaviour, PlacenoteListener
 {
-    [SerializeField] GameObject RouteSelectedPanel;
-    [SerializeField] GameObject RouteNamePanel;
-    [SerializeField] InputField RouteNameInputField;
+	[SerializeField] GameObject MapSelectedPanel;
+	[SerializeField] GameObject InitPanel;
+    [SerializeField] GameObject InitButtonsPanel;
+    [SerializeField] GameObject MapNamePanel;
+    [SerializeField] InputField MapNameInputField;
     [SerializeField] GameObject MappingPanel;
-    [SerializeField] GameObject AddArrowButton;
-    [SerializeField] GameObject RouteListPanel;
-    [SerializeField] GameObject ExitButton;
-    [SerializeField] GameObject mListElement;
+	[SerializeField] GameObject AddArrowButton;
+	[SerializeField] GameObject MapListPanel;
+	[SerializeField] GameObject ExitButton;
+	[SerializeField] GameObject mListElement;
     [SerializeField] RectTransform mListContentParent;
-    [SerializeField] ToggleGroup mToggleGroup;
-    [SerializeField] Text notificationPanelText;
+	[SerializeField] ToggleGroup mToggleGroup;
+	[SerializeField] Text mLabelText;
 
-    public string routeName;
-    private UnityARSessionNativeInterface ARSession;
-    private bool ARInitialized = false;
-    private LibPlacenote.MapMetadataSettable currentRouteInfo;
-    private LibPlacenote.MapInfo selectedRouteInfo;
-    private string selectedRouteID {
+    public string mapName;
+
+    private UnityARSessionNativeInterface mSession;
+
+	private bool mARInit = false;
+
+	
+    private LibPlacenote.MapMetadataSettable mCurrMapDetails;
+
+	private bool mReportDebug = false;
+
+	private LibPlacenote.MapInfo mSelectedMapInfo;
+	private string mSelectedMapId {
 		get {
-			return selectedRouteInfo != null ? selectedRouteInfo.placeId : null;
+			return mSelectedMapInfo != null ? mSelectedMapInfo.placeId : null;
 		}
 	}
-    private string saveRouteID = null;
-    private BoxCollider mBoxColliderDummy;
+	private string mSaveMapId = null;
+
+
+	private BoxCollider mBoxColliderDummy;
+	private SphereCollider mSphereColliderDummy;
+	private CapsuleCollider mCapColliderDummy;
 
 
 	// Use this for initialization
 	void Start ()
 	{
-        Input.location.Start ();
-        LoadListOfRoutes();
-        ARSession = UnityARSessionNativeInterface.GetARSessionNativeInterface ();
+		Input.location.Start ();
+
+		MapListPanel.SetActive (false);
+
+		mSession = UnityARSessionNativeInterface.GetARSessionNativeInterface ();
+
         StartARKit();
-        LibPlacenote.Instance.RegisterListener (this);
-        // for simulator
-        #if UNITY_EDITOR
-        AddArrowButton.SetActive(true);
-        #endif
+
+		LibPlacenote.Instance.RegisterListener (this);
+
+		// for simulator
+		#if UNITY_EDITOR
+		AddArrowButton.SetActive(true);
+		#endif
 	}
 		
 	void Update ()
 	{
-        if (!ARInitialized && LibPlacenote.Instance.Initialized()) {
-			ARInitialized = true;
-			notificationPanelText.text = "Initialized and Ready!";
+
+        if (!mARInit && LibPlacenote.Instance.Initialized()) {
+			mARInit = true;
+			mLabelText.text = "Ready to Start!";
 		}
 	}
 
 
-    public void LoadListOfRoutes ()
+    public void OnListMapClick ()
 	{
+		if (!LibPlacenote.Instance.Initialized()) {
+			Debug.Log ("SDK not yet initialized");
+			return;
+		}
 
 		foreach (Transform t in mListContentParent.transform) {
 			Destroy (t.gameObject);
 		}
 
-		RouteListPanel.SetActive (true);
-		LibPlacenote.Instance.ListMaps ((routeList) => {
-			//render list of routes
-			foreach (LibPlacenote.MapInfo routeInfoItem in routeList) {
-                AddRouteToList (routeInfoItem);
+
+		MapListPanel.SetActive (true);
+		InitPanel.SetActive (false);
+		LibPlacenote.Instance.ListMaps ((mapList) => {
+			// render the map list!
+			foreach (LibPlacenote.MapInfo mapInfoItem in mapList) {
+                if (mapInfoItem.metadata.userdata != null) {
+                    Debug.Log(mapInfoItem.metadata.userdata.ToString (Formatting.None));
+				}
+                AddMapToList (mapInfoItem);
 			}
 		});
 	}
 
+
+	public void OnCancelClick ()
+	{
+		MapSelectedPanel.SetActive (false);
+		MapListPanel.SetActive (false);
+		InitPanel.SetActive (true);
+        InitButtonsPanel.SetActive(true);
+        MapNamePanel.SetActive(false);
+
+    }
+
+
 	public void OnExitClick ()
 	{
-        RouteListPanel.SetActive (true);
-        RouteNamePanel.SetActive(false);
+		InitPanel.SetActive (true);
+        InitButtonsPanel.SetActive(true);
+        MapNamePanel.SetActive(false);
         ExitButton.SetActive (false);
-        MappingPanel.SetActive (false);
-        LibPlacenote.Instance.StopSession ();
+		MappingPanel.SetActive (false);
+
+		LibPlacenote.Instance.StopSession ();
         FeaturesVisualizer.DisablePointcloud(); 
         FeaturesVisualizer.clearPointcloud();
         GetComponent<ShapeManager>().ClearShapes();
+
 	}
 
 
-	void AddRouteToList (LibPlacenote.MapInfo routeInfo)
+	void AddMapToList (LibPlacenote.MapInfo mapInfo)
 	{
 		GameObject newElement = Instantiate (mListElement) as GameObject;
 		MapDetails listElement = newElement.GetComponent<MapDetails> ();
-		listElement.Initialize (routeInfo, mToggleGroup, mListContentParent, (value) => {
-			OnRouteSelected (routeInfo);
+		listElement.Initialize (mapInfo, mToggleGroup, mListContentParent, (value) => {
+			OnMapSelected (mapInfo);
 		});
 	}
 
-	void OnRouteSelected (LibPlacenote.MapInfo routeInfo)
+
+	void OnMapSelected (LibPlacenote.MapInfo mapInfo)
 	{
-        selectedRouteInfo = routeInfo;
-        RouteSelectedPanel.SetActive (true);
+		mSelectedMapInfo = mapInfo;
+        MapSelectedPanel.SetActive (true);
 	}
 
 
-	public void OnLoadRouteClicked ()
+	public void OnLoadMapClicked ()
 	{
         ConfigureSession ();
         FeaturesVisualizer.DisablePointcloud();
         FeaturesVisualizer.clearPointcloud();
-        notificationPanelText.text = "Loading Route: " + selectedRouteID;
-        LibPlacenote.Instance.LoadMap (selectedRouteID,
+
+        if (!LibPlacenote.Instance.Initialized()) {
+			Debug.Log ("SDK not yet initialized");
+			return;
+		}
+
+		mLabelText.text = "Loading Route ID: " + mSelectedMapId;
+		LibPlacenote.Instance.LoadMap (mSelectedMapId,
 			(completed, faulted, percentage) => {
 				if (completed) {
-					RouteSelectedPanel.SetActive (false);
-					RouteListPanel.SetActive (false);
+					MapSelectedPanel.SetActive (false);
+					MapListPanel.SetActive (false);
+					InitPanel.SetActive (false);
 					MappingPanel.SetActive(false);
 					ExitButton.SetActive (true);
+
 					LibPlacenote.Instance.StartSession ();
-					notificationPanelText.text = "Loaded ID: " + selectedRouteID;
+
+					if (mReportDebug) {
+						LibPlacenote.Instance.StartRecordDataset (
+							(datasetCompleted, datasetFaulted, datasetPercentage) => {
+
+								if (datasetCompleted) {
+									mLabelText.text = "Dataset Upload Complete";
+								} else if (datasetFaulted) {
+									mLabelText.text = "Dataset Upload Faulted";
+								} else {
+									mLabelText.text = "Dataset Upload: " + datasetPercentage.ToString ("F2") + "/1.0";
+								}
+							});
+						Debug.Log ("Started Debug Report");
+					}
+
+					mLabelText.text = "Loaded ID: " + mSelectedMapId;
 				} else if (faulted) {
-					notificationPanelText.text = "Failed to load ID: " + selectedRouteID;
+					mLabelText.text = "Failed to load ID: " + mSelectedMapId;
 				} else {
-					notificationPanelText.text = "Route Download: " + percentage.ToString ("F2") + "/1.0";
+					mLabelText.text = "Route Download: " + percentage.ToString ("F2") + "/1.0";
 				}
 			}
 		);
 	}
 
-    public void OnRouteNameBackClick()
+    public void OnMapNameBackClick()
     {
-        RouteListPanel.SetActive (true);
-        RouteNamePanel.SetActive(false);
+        InitButtonsPanel.SetActive(true);
+        MapNamePanel.SetActive(false);
     }
 
-    public void OnNewRouteClick()
+    public void OnNewMapClick()
     {
         FeaturesVisualizer.EnablePointcloud();
-        RouteListPanel.SetActive(false);
-        RouteNamePanel.SetActive(true);
+        InitButtonsPanel.SetActive(false);
+        MapNamePanel.SetActive(true);
     }
 
-    public void OnRouteNameOkClick()
+    public void OnMapNameOkClick()
     {
-        RouteNamePanel.SetActive(false);
-        routeName = RouteNameInputField.text;
-        if (routeName is null)
+        mapName = MapNameInputField.text;
+        if (mapName is null)
         {
             Debug.Log("Route name null");
         }
         else
         {
-            CreateNewRoute();
-            Debug.Log("creating route with name" + routeName);
+            CreateNewMap();
+            Debug.Log("creating route with name" + mapName);
         }
     }
 
-    public void CreateNewRoute ()
+    public void CreateNewMap ()
 	{
-        ConfigureSession ();
-        RouteListPanel.SetActive(false);
-        MappingPanel.SetActive (true);
+		ConfigureSession ();
+
+		if (!LibPlacenote.Instance.Initialized()) {
+			Debug.Log ("SDK not yet initialized");
+			return;
+		}
+
+		InitPanel.SetActive (false);
+		MappingPanel.SetActive (true);
         ExitButton.SetActive(true);
-        LibPlacenote.Instance.StartSession ();
+
+        Debug.Log ("Started Session");
+		LibPlacenote.Instance.StartSession ();
+
+		if (mReportDebug) {
+			LibPlacenote.Instance.StartRecordDataset (
+				(completed, faulted, percentage) => {
+					if (completed) {
+						mLabelText.text = "Dataset Upload Complete";
+					} else if (faulted) {
+						mLabelText.text = "Dataset Upload Faulted";
+					} else {
+						mLabelText.text = "Dataset Upload: (" + percentage.ToString ("F2") + "/1.0)";
+					}
+				});
+			Debug.Log ("Started Debug Report");
+		}
+
 	}
 
 	private void StartARKit ()
 	{
 		#if !UNITY_EDITOR
-		notificationPanelText.text = "Initializing ARKit";
+		mLabelText.text = "Initializing ARKit";
 		Application.targetFrameRate = 60;
 		ConfigureSession ();
 		#endif
@@ -182,65 +271,73 @@ public class NavigatAR : MonoBehaviour, PlacenoteListener
 		ARKitWorldTrackingSessionConfiguration config = new ARKitWorldTrackingSessionConfiguration ();
 		config.alignment = UnityARAlignment.UnityARAlignmentGravity;
 		config.getPointCloudData = true;
-		config.enableLightEstimation = true; 
-          config.planeDetection = UnityARPlaneDetection.Horizontal;
-		ARSession.RunWithConfig (config);
+		config.enableLightEstimation = true;
+        config.planeDetection = UnityARPlaneDetection.Horizontal;
+		mSession.RunWithConfig (config);
  		#endif
 	}
 
 
-	public void OnSaveRouteClick ()
+	public void OnSaveMapClick ()
 	{
+		if (!LibPlacenote.Instance.Initialized()) {
+			Debug.Log ("SDK not yet initialized");
+			return;
+		}
+
 		bool useLocation = Input.location.status == LocationServiceStatus.Running;
 		LocationInfo locationInfo = Input.location.lastData;
-		notificationPanelText.text = "Saving...";
+
+		mLabelText.text = "Saving...";
 		LibPlacenote.Instance.SaveMap (
-			(routeId) => {
-                    LibPlacenote.Instance.StopSession ();
-                    FeaturesVisualizer.DisablePointcloud();
-                    FeaturesVisualizer.clearPointcloud();
-                    saveRouteID = routeId;
+			(mapId) => {
+				LibPlacenote.Instance.StopSession ();
+                FeaturesVisualizer.DisablePointcloud();
+                FeaturesVisualizer.clearPointcloud();
 
-                    RouteListPanel.SetActive(true);
-                    RouteNamePanel.SetActive(false);
-                    MappingPanel.SetActive (false);
-                    ExitButton.SetActive(false);
+                mSaveMapId = mapId;
+				InitPanel.SetActive (true);
+                InitButtonsPanel.SetActive(true);
+                MapNamePanel.SetActive(false);
+                MappingPanel.SetActive (false);
+				ExitButton.SetActive(false);
 
-                    LibPlacenote.MapMetadataSettable metadata = new LibPlacenote.MapMetadataSettable();
-                    metadata.name = routeName;
-                    notificationPanelText.text = "Saved Route Name: " + metadata.name;
+				LibPlacenote.MapMetadataSettable metadata = new LibPlacenote.MapMetadataSettable();
+                metadata.name = mapName;
+				mLabelText.text = "Saved Route Name: " + metadata.name;
 
-                    JObject userdata = new JObject ();
-                    metadata.userdata = userdata;
-                    JObject shapeList = GetComponent<ShapeManager>().Shapes2JSON();
-                    userdata["shapeList"] = shapeList;
+				JObject userdata = new JObject ();
+				metadata.userdata = userdata;
 
-                    GetComponent<ShapeManager>().ClearShapes();
+                JObject shapeList = GetComponent<ShapeManager>().Shapes2JSON();
 
-                    if (useLocation) {
+				userdata["shapeList"] = shapeList;
+                GetComponent<ShapeManager>().ClearShapes();
+
+				if (useLocation) {
 					metadata.location = new LibPlacenote.MapLocation();
 					metadata.location.latitude = locationInfo.latitude;
 					metadata.location.longitude = locationInfo.longitude;
 					metadata.location.altitude = locationInfo.altitude;
-                    }
-                    LibPlacenote.Instance.SetMetadata (routeId, metadata, (success) => {
+				}
+				LibPlacenote.Instance.SetMetadata (mapId, metadata, (success) => {
 					if (success) {
 						Debug.Log("Meta data successfully saved");
 					} else {
 						Debug.Log("Meta data failed to save");
 					}
 				});
-				currentRouteInfo = metadata;
+				mCurrMapDetails = metadata;
 			},
 			(completed, faulted, percentage) => {
 				if (completed) {
-					notificationPanelText.text = "Upload Complete:" + currentRouteInfo.name;
+					mLabelText.text = "Upload Complete:" + mCurrMapDetails.name;
 				}
 				else if (faulted) {
-					notificationPanelText.text = "Upload of Route Named: " + currentRouteInfo.name + "faulted";
+					mLabelText.text = "Upload of Route Named: " + mCurrMapDetails.name + "faulted";
 				}
 				else {
-					notificationPanelText.text = "Uploading Route Named: " + currentRouteInfo.name + "(" + percentage.ToString("F2") + "/1.0)";
+					mLabelText.text = "Uploading Route Named: " + mCurrMapDetails.name + "(" + percentage.ToString("F2") + "/1.0)";
 				}
 			}
 		);
@@ -252,12 +349,12 @@ public class NavigatAR : MonoBehaviour, PlacenoteListener
 	{
 		Debug.Log ("prevStatus: " + prevStatus.ToString() + " currStatus: " + currStatus.ToString());
 		if (currStatus == LibPlacenote.MappingStatus.RUNNING && prevStatus == LibPlacenote.MappingStatus.LOST) {
-			notificationPanelText.text = "Localized";
-            GetComponent<ShapeManager>().LoadShapesJSON (selectedRouteInfo.metadata.userdata);
+			mLabelText.text = "Localized";
+            GetComponent<ShapeManager>().LoadShapesJSON (mSelectedMapInfo.metadata.userdata);
 		} else if (currStatus == LibPlacenote.MappingStatus.RUNNING && prevStatus == LibPlacenote.MappingStatus.WAITING) {
-			notificationPanelText.text = "Mapping: Tap to add Shapes";
+			mLabelText.text = "Mapping: Tap to add Shapes";
 		} else if (currStatus == LibPlacenote.MappingStatus.LOST) {
-			notificationPanelText.text = "Searching for position lock";
+			mLabelText.text = "Searching for position lock";
 		} else if (currStatus == LibPlacenote.MappingStatus.WAITING) {
             if (GetComponent<ShapeManager>().shapeObjList.Count != 0) {
                 GetComponent<ShapeManager>().ClearShapes ();

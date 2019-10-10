@@ -6,10 +6,8 @@ using UnityEngine.XR.iOS;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 
+ //Shape Info Classes
 
-//https://github.com/Placenote/PlacenoteSDK-Unity/blob/master/Assets/Placenote/Examples/RandomShapes/ShapeManager.cs
-
-//Shape Info Classes
 [System.Serializable]
 public class ShapeInfo
 {
@@ -23,6 +21,7 @@ public class ShapeInfo
     public int shapeType;
 }
 
+
 [System.Serializable]
 public class ShapeList
 {
@@ -30,7 +29,9 @@ public class ShapeList
 }
 
 
+
  //Main Class
+
 public class ShapeManager : MonoBehaviour {
 
     public List<GameObject> ShapePrefabs = new List<GameObject>();

@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class SwitchScene : MonoBehaviour
 {
-    //Load scenes based on index - index set in build settings in Unity
     public void SwitchToStartScreen()
     {
         SceneManager.LoadScene(0);

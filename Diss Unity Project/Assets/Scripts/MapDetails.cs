@@ -5,22 +5,21 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using Newtonsoft.Json.Linq;
 
-//https://github.com/Placenote/PlacenoteSDK-Unity/blob/master/Assets/Placenote/Examples/RandomShapes/MapInfoElement.cs
 public class MapDetails : MonoBehaviour
 {
-	[SerializeField] Text routeIdText;
-	[SerializeField] Toggle toggle;
+	[SerializeField] Text mMapIdText;
+	[SerializeField] Toggle mToggle;
 
-	public void Initialize (LibPlacenote.MapInfo routeInfo, ToggleGroup toggleGroup,
+	public void Initialize (LibPlacenote.MapInfo mapInfo, ToggleGroup toggleGroup,
 	                       RectTransform listParent, UnityAction<bool> onToggleChanged)
 	{
-		routeIdText.text = routeInfo.placeId;
-		if (routeInfo.metadata.name != null && routeInfo.metadata.name.Length > 0) {
-			routeIdText.text = routeInfo.metadata.name;
+		mMapIdText.text = mapInfo.placeId;
+		if (mapInfo.metadata.name != null && mapInfo.metadata.name.Length > 0) {
+			mMapIdText.text = mapInfo.metadata.name;
 		}
-		toggle.group = toggleGroup;
+		mToggle.group = toggleGroup;
 		gameObject.transform.SetParent (listParent);
-		toggle.onValueChanged.AddListener (onToggleChanged);
+		mToggle.onValueChanged.AddListener (onToggleChanged);
 
 	}
 

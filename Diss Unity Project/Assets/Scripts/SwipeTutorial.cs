@@ -9,8 +9,8 @@ public class SwipeTutorial : MonoBehaviour, IDragHandler, IEndDragHandler
     //https://www.youtube.com/watch?v=rjFgThTjLso
 
 
-    private Vector3 panelPosition;
-    public float swipePercentThreshold = 0.2f;
+    private Vector3 panelLocation;
+    public float percentThreshold = 0.2f;
     public float easing = 0.5f;
     public int totalPanels = 3;
     private int currentPanel = 1;
@@ -28,42 +28,41 @@ public class SwipeTutorial : MonoBehaviour, IDragHandler, IEndDragHandler
     // Start is called before the first frame update
     void Start()
     {
-        panelPosition = transform.position;
+        panelLocation = transform.position;
         
     }
 
     public void OnDrag(PointerEventData data) 
     {
-        float xAxisDiff = data.pressPosition.x - data.position.x;
-        transform.position = panelPosition - new Vector3(xAxisDiff,0,0);
+        float difference = data.pressPosition.x - data.position.x;
+        transform.position = panelLocation - new Vector3(difference,0,0);
     }
 
     public void OnEndDrag(PointerEventData data) 
     {
-        float percentScreenWidthSwipe = (data.pressPosition.x - data.position.x) / Screen.width;
-        if(Mathf.Abs(percentScreenWidthSwipe) >= swipePercentThreshold)
+        float percentage = (data.pressPosition.x - data.position.x) / Screen.width;
+        if(Mathf.Abs(percentage) >= percentThreshold)
         {
-            Vector3 newPosition = panelPosition;
-            if(percentScreenWidthSwipe>0 && currentPanel < totalPanels)
+            Vector3 newLocation = panelLocation;
+            if(percentage>0 && currentPanel < totalPanels)
             {
                 currentPanel++;
-                newPosition += new Vector3(-Screen.width,0,0);
+                newLocation += new Vector3(-Screen.width,0,0);
                 updateCircleProgressionTransparency();
             }
-            else if(percentScreenWidthSwipe < 0 && currentPanel > 1) {
+            else if(percentage < 0 && currentPanel > 1) {
                 currentPanel--;
-                newPosition += new Vector3(Screen.width,0,0);
+                newLocation += new Vector3(Screen.width,0,0);
                 updateCircleProgressionTransparency();
             }
-            StartCoroutine(SmoothMove(transform.position, newPosition, easing));
-            panelPosition = newPosition;
+            StartCoroutine(SmoothMove(transform.position, newLocation, easing));
+            panelLocation = newLocation;
         }
         else
         {
-            StartCoroutine(SmoothMove(transform.position, panelPosition, easing));
+            StartCoroutine(SmoothMove(transform.position, panelLocation, easing));
         }
     }
-
     IEnumerator SmoothMove(Vector3 startPos, Vector3 endPos, float seconds )
     {
         float t = 0f;
