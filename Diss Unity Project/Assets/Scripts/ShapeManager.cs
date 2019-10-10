@@ -6,8 +6,10 @@ using UnityEngine.XR.iOS;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 
+//Code has been adapted from Placenote's Sample Application
 //https://github.com/Placenote/PlacenoteSDK-Unity/blob/master/Assets/Placenote/Examples/RandomShapes/ShapeManager.cs
-//Shape Info Classes
+
+//Shape Classes which store information about each shape (prefab)
 [System.Serializable]
 public class ShapeInfo
 {
@@ -20,8 +22,6 @@ public class ShapeInfo
     public float qw;
     public int shapeType;
 }
-
-
 [System.Serializable]
 public class ShapeList
 {
@@ -29,67 +29,62 @@ public class ShapeList
 }
 
 
-
- //Main Class
-
-public class ShapeManager : MonoBehaviour {
+//Main Class
+public class ShapeManager : MonoBehaviour
+{
 
     public List<GameObject> ShapePrefabs = new List<GameObject>();
     public List<ShapeInfo> shapeInfoList = new List<ShapeInfo>();
     public List<GameObject> shapeObjList = new List<GameObject>();
-   
-    public int objType;
+
+    public int objType; //Each prefab has a index associated for its type
     public int factCount;
 
-    void Start () {
+    void Start()
+    {
         objType = 0;
-        factCount = 7;
-	}
+        factCount = 7; //fact prefabs start from index 7 
+    }
 
-	public void OnAddArrowClick()
-	{
+    //Functions to add relevant prefab to screen
+    public void OnAddArrowClick()
+    {
         objType = 0;
-		AddShape();
-	}
-
+        AddShape();
+    }
     public void OnPlaceMacClick()
     {
         objType = 1;
         AddShape();
     }
-
     public void OnPlaceWindowsClick()
     {
         objType = 2;
         AddShape();
     }
-
     public void OnPlaceLinuxClick()
     {
         objType = 3;
         AddShape();
     }
-
     public void OnPlaceLibraryClick()
     {
         objType = 4;
         AddShape();
     }
-
-    public void OnPlaceLaptopPickupClick()
+    public void OnPlaceVendingMachineClick()
     {
         objType = 5;
         AddShape();
     }
-
-    public void OnPlaceCourseInductionClick()
+    public void OnPlaceOfficeClick()
     {
         objType = 6;
         AddShape();
     }
-
     public void OnPlaceFactClick()
     {
+        //Go through list of facts and restart if all have been used
         if (factCount == 17)
         {
             factCount = 7;
@@ -102,12 +97,11 @@ public class ShapeManager : MonoBehaviour {
 
     public void AddShape()
     {
+        //get rotation and position relative to the camera
         Vector3 placePosition = Camera.main.transform.position + Camera.main.transform.forward * 0.3f;
         Quaternion placeRotation = Camera.main.transform.rotation;
-
+        //Set shape position data based on values retrieved from camera
         int type = objType;
-
-
         ShapeInfo shapeInfo = new ShapeInfo();
         shapeInfo.px = placePosition.x;
         shapeInfo.py = placePosition.y;
@@ -120,14 +114,15 @@ public class ShapeManager : MonoBehaviour {
 
         shapeInfoList.Add(shapeInfo);
 
-        GameObject shape = ShapeFromInfo(shapeInfo);
-        shapeObjList.Add(shape);
+        GameObject shape = ShapeFromInfo(shapeInfo); //Call function to place the shape
+        shapeObjList.Add(shape); //Add the shape to the list
     }
 
 
     public GameObject ShapeFromInfo(ShapeInfo info)
     {
-        GameObject shape = Instantiate(ShapePrefabs[info.shapeType]);
+        GameObject shape = Instantiate(ShapePrefabs[info.shapeType]); //get relevant shape to place
+        //Place shape with position,rotation and scale
         shape.transform.position = new Vector3(info.px, info.py, info.pz);
         shape.transform.rotation = new Quaternion(info.qx, info.qy, info.qz, info.qw);
         shape.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
@@ -135,6 +130,7 @@ public class ShapeManager : MonoBehaviour {
         return shape;
     }
 
+    //Destroy all shapes and clear list
     public void ClearShapes()
     {
         foreach (var obj in shapeObjList)
@@ -145,7 +141,7 @@ public class ShapeManager : MonoBehaviour {
         shapeInfoList.Clear();
     }
 
-
+    //Converts shape list into JObjct to be stored when saving a route
     public JObject Shapes2JSON()
     {
         ShapeList shapeList = new ShapeList();
@@ -158,6 +154,7 @@ public class ShapeManager : MonoBehaviour {
         return JObject.FromObject(shapeList);
     }
 
+    //Convert JSON of shapes into objects to place in AR and add to shape
     public void LoadShapesJSON(JToken mapMetadata)
     {
         ClearShapes();
